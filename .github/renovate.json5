@@ -1,0 +1,36 @@
+{
+  extends: [
+    'config:recommended',
+    'docker:enableMajor',
+    ':disableRateLimiting',
+    ':dependencyDashboard',
+    ':enablePreCommit',
+    ':semanticCommits',
+    ':automergeDigest',
+    ':automergeBranch',
+    'github>ryanheyser/resume//.github/renovate/automerge-github-actions.json5',
+  ],
+  enabled: true,
+  timezone: 'America/New_York',
+  dependencyDashboard: true,
+  dependencyDashboardTitle: 'Renovate (Mend) Dashboard',
+  suppressNotifications: [
+    'prIgnoreNotification',
+  ],
+  rebaseWhen: 'conflicted',
+  commitBodyTable: true,
+  platformCommit: 'enabled',
+  gitAuthor: 'Ryan Heyser <rumblpak@users.noreply.github.com>',
+  commitBody: 'Signed-off-by: Ryan Heyser <rumblpak@users.noreply.github.com>',
+  ignorePaths: [
+    'setup/**',
+    '.taskfiles/**',
+    'secrets/**',
+  ],
+  'github-actions': {
+    managerFilePatterns: [
+      '/(^|/)(workflow-templates|.(?:github|gitea|forgejo)/(?:workflows|actions))/.+.ya?ml$/',
+      '/(^|/)action.ya?ml$/',
+    ],
+  },
+}

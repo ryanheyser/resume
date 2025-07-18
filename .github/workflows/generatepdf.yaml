@@ -1,0 +1,40 @@
+name: Generate Resume
+
+on:
+  push:
+    branches: 
+      - main
+    tags:
+       - '*'
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Harden the runner (Audit all outbound calls)
+      uses: step-security/harden-runner@ec9f2d5744a09debf3a187a3f4f675c53b671911 # v2.13.0
+      with:
+        egress-policy: audit
+
+    - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+      with:
+        token: ${{ secrets.PAT }}
+        fetch-depth: 1
+        ref: main
+    
+    - name: latex2pdf
+      id: compile-latex-document
+      uses: thomas-chauvet/latex2pdf-action@e9cf920bff4037cd56c9c0a28655718d59b4227e # v1.1.0
+      with:
+        output_dir: output
+        main_latex_file: resume.tex
+        ctan_packages: amsmath amsfonts lua-uni-algos
+    
+    - name: Upload PDF to the workflow tab
+      id: upload-workflow-tab
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+      with:
+        name: output
+        path: output/resume.pdf

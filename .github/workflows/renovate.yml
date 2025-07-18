@@ -1,0 +1,64 @@
+name: renovate
+
+on:
+  workflow_dispatch:
+  schedule:
+  - cron: '0 */6 * * *'
+
+permissions:
+  contents: read
+
+jobs:
+  helm-releases:
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+      attestations: write
+      checks: write
+      contents: write
+      deployments: write
+      discussions: write
+      issues: write
+      packages: write
+      pages: write
+      pull-requests: write
+      repository-projects: write
+      security-events: write
+      statuses: write
+    steps:
+    - name: Harden the runner (Audit all outbound calls)
+      uses: step-security/harden-runner@ec9f2d5744a09debf3a187a3f4f675c53b671911 # v2.13.0
+      with:
+        egress-policy: audit
+
+    - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+      with:
+        token: ${{ secrets.PAT }}
+        fetch-depth: 1
+        ref: main
+
+    # - name: Install yq
+    #   run: |
+    #     sudo wget -O /usr/local/bin/yq https://github.com/mikefarah/yq/releases/download/v4.46.1/yq_linux_amd64
+    #     sudo chmod +x /usr/local/bin/yq
+
+    - uses: chrisdickinson/setup-yq@3d931309f27270ebbafd53f2daee773a82ea1822 # v1.0.1
+      env:
+        ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
+      with:
+        yq-version: 3.3.2
+        yq-url: https://github.com/mikefarah/yq/releases/download/{version}/yq_{platform}_{arch}
+
+    - name: Create pull request for HelmRelease annotations
+      uses: peter-evans/create-pull-request@271a8d0340265f705b14b6d32b9829c1cb33d45e # v7
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        branch: helm-release-annotations
+        title: "[renovate] create helmrelease annotations [ci-skip]"
+        signoff: true
+        committer: "Ryan Heyser <1079612+rumblpak@users.noreply.github.com>"
+        author: "Ryan Heyser <1079612+rumblpak@users.noreply.github.com>"
+        commit-message: Create renovatebot helmrelease annotations
+        body: |
+          Signed-off-by: Ryan Heyser <1079612+rumblpak@users.noreply.github.com>
+        labels: renovate/helm-release-annotations
