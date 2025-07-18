@@ -1,0 +1,138 @@
+\documentclass[11pt]{article}       % set main text size
+\usepackage[letterpaper,                % set paper size to letterpaper. change to a4paper for resumes outside of North America
+top=0.5in,                          % specify top page margin
+bottom=0.5in,                       % specify bottom page margin
+left=0.5in,                         % specify left page margin
+right=0.5in]{geometry}              % specify right page margin
+                       
+\usepackage{XCharter}               % set font. comment this line out if you want to use the default LaTeX font Computer Modern
+\usepackage[T1]{fontenc}            % output encoding
+\usepackage[utf8]{inputenc}         % input encoding
+\usepackage{enumitem}               % enable lists for bullet points: itemize and \item
+\usepackage[hidelinks]{hyperref}    % format hyperlinks
+\usepackage{titlesec}               % enable section title customization
+\raggedright                        % disable text justification
+\pagestyle{empty}                   % disable page numbering
+
+% ensure PDF output will be all-Unicode and machine-readable
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+% format section headings: bolding, size, white space above and below
+\titleformat{\section}{\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule\vspace{-6.5pt}]
+
+% format bullet points: size, white space above and below, white space between bullets
+\renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$}
+\setlist[itemize]{itemsep=-2pt, leftmargin=12pt, topsep=7pt} %%% Test various topsep values to fix vertical spacing errors
+
+% resume starts here
+\begin{document}
+
+% name
+\centerline{\Huge Ryan Heyser}
+
+\vspace{5pt}
+
+% contact information
+\centerline{\href{mailto:ryan.heyser@gmail.com}{ryan.heyser@gmail.com} | \href{github.com/ryanheyser}{github.com/ryanheyser}}
+
+\vspace{-10pt}
+
+% skills section
+\section*{Skills}
+\textbf{Cloud Platforms:} Google Cloud, Windows Azure \\
+\textbf{Cloud Security:} Vault, Wiz, XDR \\
+\textbf{Programming Languages:} Golang, Python, Bash \\
+\textbf{Infrastructure as Code:} Terraform, Ansible \\
+\textbf{GitOps:} Fluxcd, Argocd \\
+\textbf{Monitoring Tools:} Grafana, Prometheus \\
+\textbf{Container Orchestration:} Docker, Kubernetes, VMware Tanzu \\
+\textbf{Enterprise Workload Orchestration:} VMware vSphere \\
+\textbf{Version Control:} Git (Github.com), SVN, CVS \\
+\textbf{AI:} Gemini, MCP server
+
+\vspace{-6.5pt}
+
+% experience section
+\section*{Experience}
+\textbf{Staff Systems Engineer - Cloud Platform Engineering,} {The Home Depot} -- Atlanta, GA \hfill March 2024 -- Present \\
+\vspace{-9pt}
+\begin{document}
+Platform Engineering position focused on both software development of platform APIs and platform management. Position includes a 24x7 on-call shift. Provide high-level customer support as the Hashicorp Vault platform subject matter expert. Support Google Cloud Infrastructure via terraform enterprise and sentinel policy-as-code.
+\end{document}
+\vspace{-9pt}
+\begin{itemize}
+  \item \textbf{Metrics:} Designed and implemented smoke testing infrastructure for Terraform Enterprise implementation. Increased observability of Terraform Enterprise platform and identified cause of systemic deployment issues affecting customers.
+  \item \textbf{Documentation:} Designed and implemented standardized documentation templating engine via Confluence. Increased documentation creation by team by over 1000% over the previous 2Q.
+  \item \textbf{Application:} Implemented custom DERP servers for cloud-wide Tailscale tailnet communication. Maintain 99.99% uptime.
+  \item \textbf{Application:} Developed Github Actions to automate building of operating system and container images.
+\end{itemize}
+
+\textbf{Staff Systems Engineer - Developer Operations and Platform Engineering,} {The Home Depot} -- Atlanta, GA \hfill May 2021 -- March 2024 \\
+\vspace{-9pt}
+\begin{document}
+Platform Engineering position focused on both software development of platform APIs and platform management. Position includes a 24x7 on-call shift. Designed and implemented Kubernetes in the datacenter. Provide high-level customer support as the Kubernetes platform subject matter expert. Provide L4 support for the prior application platform, VMware Tanzu. 
+\end{document}
+\vspace{-9pt}
+\begin{itemize}
+  \item \textbf{Leadership:} Designed and implemented team mentorship program to improve shared team knowledge.
+  \item \textbf{Metrics:} Designed and implemented metrics and logging infrastructure for Kubernetes to egress metrics and logs from datacenter to Google Cloud.
+  \item \textbf{Application:} Developed a terraform process to create Kubernetes clusters. Process improved Kubernetes customer cluster onboarding down from 2 business weeks to 15 minutes.
+  \item \textbf{Application:} Developed terraform providers and APIs to bridge Rancher Kubernetes and Terraform using Golang.
+  \item \textbf{Application:} Developed Github Actions to automate building of operating system and container images.
+  \item \textbf{Reliability:} Developed node exporter providing additional metrics of Kubernetes node information in Prometheus format in Golang.
+  \item \textbf{Reliability:} Developed node smoke test application to provide real-time cluster status information in Golang.
+  \item \textbf{Reliability:} Analyzed metrics usage and was able to reduce recurring cost by half.
+\end{itemize}
+
+\textbf{Senior Systems Engineer - Developer Operations and Platform Engineering,} {The Home Depot} -- Atlanta, GA \hfill October 2019 -- May 2021 \\
+\vspace{-9pt}
+\begin{document}
+Systems Engineering position focused on both platform management. Position includes a 24x7 on-call shift. Provide high-level customer support. Develop standard template for documentation to improve developer experience with increased ability to document team and external documentation.
+\end{document}
+\vspace{-9pt}
+\begin{itemize}
+  \item \textbf{Documentation:} Created documentation to assist both team standard operating procedure and customers for VMware Tanzu.
+  \item \textbf{Application:} Worked to migrate 1000+ applications on VMware Tanzu from CFLINUXFS2 to CFLINUXFS3 over a 3-day period.
+  \item \textbf{Reliability:} Maintain supported and secure VMware Tanzu through multiple upgrades.
+  \item \textbf{Reliability:} Bring stability to the VMware Tanzu by integrating Min.io, an S3 data backend, significantly reducing customer impact during maintenance windows. 
+\end{itemize}
+
+\textbf{Verification Engineer,} {Telchemy} -- Duluth, GA \hfill April 2015 -- October 2019 \\
+\vspace{-9pt}
+\begin{document}
+Designed and implemented automated test tool framework to improve validation of software. Provided high level customer support as an interface between the customer and the development team. Designed and maintained secure lab network providing test framework for 100+ devices and 5000+ virtual devices. Provided manual analysis of reports to validate software stack. 
+\end{document}
+\vspace{-9pt}
+\begin{itemize}
+  \item \textbf{Documentation:} Produce method of procedure maintenance guidelines, produce recommended security practices documentation, for customer integration of products.
+  \item \textbf{Application:} Built, tested, documented and maintained software regression testing tool suite reducing testing cycle from months to weeks. 
+  \item \textbf{Reliability:} Designed complex networking configuration for lab testing environment, including network monitoring of all traffic for analysis.
+  \item \textbf{Reliability:} Maintain thousands of Linux container instances (LXC, docker) in datacenter.
+  \item \textbf{Reliability:} Maintain hundreds of virtual machines (KVM/QEMU, VirtualBox, VMware).
+\end{itemize}
+
+\vspace{-18.5pt}
+
+% projects section
+\section*{Projects}
+\textbf{Homelab} \hfill \href{https://github.com/ryanheyser/homelab-ops}{github.com/ryanheyser/homelab-ops} \href{https://github.com/ryanheyser/homelab-infrastructure}{github.com/ryanheyser/homelab-infrastructure} \\
+\vspace{-9pt}
+\begin{document}
+Project to build and maintain homelab through Devops and Infrastructure-as-Code.
+\end{document}
+\vspace{-9pt}
+\begin{itemize}
+  \item Bootstrap Ubuntu virtual machine image via Cloud Init.
+  \item Configure Proxmox VE via Ansible.
+  \item Deploy Rancher Kubernetes Engine cluster via Ansible Playbook and configure the cluster to be managed by Fluxcd.
+\end{itemize}
+
+\vspace{-18.5pt}
+
+% education section
+\section*{Education}
+\textbf{Florida Atlantic University} -- MS in Computer Engineering \hfill August 2013 \\
+\textbf{Georgia Institute of Technology} -- BS in Computer Engineering \hfill August 2011
+
+\end{document}
