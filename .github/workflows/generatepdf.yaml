@@ -26,15 +26,17 @@ jobs:
     
     - name: latex2pdf
       id: compile-latex-document
-      uses: thomas-chauvet/latex2pdf-action@e9cf920bff4037cd56c9c0a28655718d59b4227e # v1.1.0
+      uses: xu-cheng/latex-action@25080975331dc4fc8e6f1af55788e00f84f51fff # v4.0.0
       with:
-        output_dir: output
-        main_latex_file: resume.tex
-        ctan_packages: moderncv academicons arydshln luatexbase multirow fontawesome5 xargs bigfoot colortbl pgf
+        root_file: resume.tex
+        docker_image: ghcr.io/xu-cheng/texlive-alpine@sha256:1a2027fd03aa64455cf36c927c1dfccffc8fc8a3cb11012333be815f8b33e956 # 20250701
+        extra_system_packages: "inkscape ghostscript"
+        pre_compile: "tlmgr update --self && tlmgr update --all"
+        post_compile: "latexmk -c"
     
     - name: Upload PDF to the workflow tab
       id: upload-workflow-tab
       uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
       with:
-        name: output
-        path: output/resume.pdf
+        name: PDF
+        path: resume.pdf
