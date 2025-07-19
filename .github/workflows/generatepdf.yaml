@@ -25,6 +25,7 @@ jobs:
         ref: main
     
     - name: latex2pdf
+      if: ${{ hashFiles('resume.tex') != '' }}
       id: compile-latex-document
       uses: xu-cheng/latex-action@25080975331dc4fc8e6f1af55788e00f84f51fff # v4.0.0
       with:
@@ -35,8 +36,10 @@ jobs:
         post_compile: "latexmk -c"
     
     - name: Upload PDF to the workflow tab
+      if: ${{ hashFiles('resume.pdf') != '' }}
       id: upload-workflow-tab
       uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
       with:
-        name: PDF
+        name: resume
         path: resume.pdf
+        if-no-files-found: warn
