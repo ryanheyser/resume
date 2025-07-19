@@ -33,4 +33,10 @@
       '/(^|/)action.ya?ml$/',
     ],
   },
+  'kubernetes': {
+    managerFilePatterns: [
+      '/(^|/)(workflow-templates|.(?:github|gitea|forgejo)/(?:workflows|actions))/.+.ya?ml$/',
+      '/(^|/)action.ya?ml$/',
+    ],
+  },
 }

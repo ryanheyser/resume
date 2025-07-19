@@ -30,6 +30,7 @@ jobs:
       uses: xu-cheng/latex-action@25080975331dc4fc8e6f1af55788e00f84f51fff # v4.0.0
       with:
         root_file: resume.tex
+        # renovate: 
         docker_image: ghcr.io/xu-cheng/texlive-alpine@sha256:1a2027fd03aa64455cf36c927c1dfccffc8fc8a3cb11012333be815f8b33e956 # 20250701
         extra_system_packages: "inkscape ghostscript"
         pre_compile: "tlmgr update --self && tlmgr update --all"
