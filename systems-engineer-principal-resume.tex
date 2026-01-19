@@ -70,10 +70,13 @@ right=0.5in]{geometry}              % specify right page margin
 \vspace{-9.5pt}
 \item\textbf{GitOps:} Fluxcd, Argocd
 \columnbreak
-%\vspace{-9.5pt}
 \item\textbf{Monitoring Tools:} Grafana, Prometheus
 \vspace{-9.5pt}
 \item\textbf{Observability \& Tracing:} OpenTelemetry, distributed tracing
+\vspace{-9.5pt}
+\item\textbf{Service Mesh:} Istio, Linkerd
+\vspace{-9.5pt}
+\item\textbf{CI / CD:} GitHub Actions, Jenkins, ArgoCD
 \vspace{-9.5pt}
 \item\textbf{Container Orchestration:} Docker, Kubernetes, VMware Tanzu
 \vspace{-9.5pt}
@@ -93,17 +96,16 @@ right=0.5in]{geometry}              % specify right page margin
 \textit{Platform Engineering position focused on both software development of platform APIs and platform management. Position includes a 24x7 on-call shift. Provide high-level customer support as the Hashicorp Vault platform subject matter expert. Support Google Cloud Infrastructure via terraform enterprise and sentinel policy-as-code.} \\
 \vspace{-6.5pt}
 \begin{itemize}
-  \item \textbf{Metrics:} Designed and implemented smoke testing infrastructure for Terraform Enterprise implementation. Increased observability of Terraform Enterprise platform and identified cause of systemic deployment issues affecting customers.
-  \item \textbf{Documentation:} Designed and implemented standardized documentation templating engine via Confluence. Increased documentation creation by the team by over 1000\% the previous two quarters.
   \item \textbf{Application:} Implemented custom DERP servers for cloud-wide Tailscale tailnet communication. Maintain 99.999\% uptime.
   \item \textbf{Application:} Developed Github Actions to automate building of operating system and container images.
-  \item \textbf{AI \& Deliverability:} Leveraged AI tools (Gemini, MCP server) to automate release notes, test selection, and documentation generation — improving release deliverability and maintaining consistently high deployment success rates.
-  \item \textbf{Golang Development:} Built Terraform providers, a node exporter, and cluster smoke-test tooling in Golang to increase automation, observability, and platform reliability.
-  \item \textbf{SLOs \& Reliability:} Defined SLO/SLI program for platform services leading to reduced P99 latency and increased availability.
+  \item \textbf{Deliverability:} Leveraged AI tools (Gemini, MCP server) to automate release notes, test selection, and documentation generation — improving release deliverability and maintaining consistently high deployment success rates.
+  \item \textbf{Development:} Built Terraform providers, a node exporter, and cluster smoke-test tooling in Golang to increase automation, observability, and platform reliability.
+  \item \textbf{Documentation:} Designed and implemented standardized documentation templating engine via Confluence. Increased documentation creation by the team by over 1000\% the previous two quarters.
+  \item \textbf{FinOps:} Led monitoring and metrics cost-optimization that reduced recurring observability spend while preserving signal quality.
   \item \textbf{Incident Management:} Established incident response playbooks, on-call rotation, and blameless postmortems.
-  \item \textbf{Cost \& Efficiency:} Led monitoring and metrics cost-optimization that reduced recurring observability spend while preserving signal quality.
-  \item \textbf{Leadership \& Strategy:} Owned platform roadmap, prioritized platform investments, and aligned cross-functional stakeholders to deliver platform initiatives.
-  \item \textbf{People \& Hiring:} Mentored engineers, ran hiring interviews, and structured onboarding to accelerate new-hire productivity.
+  \item \textbf{Leadership:} Owned platform roadmap, prioritized platform investments, and aligned cross-functional stakeholders; led hiring, mentorship, and onboarding programs to accelerate new-hire productivity and retention.
+  \item \textbf{Metrics:} Designed and implemented smoke testing infrastructure for Terraform Enterprise implementation. Increased observability of Terraform Enterprise platform and identified cause of systemic deployment issues affecting customers.
+  \item \textbf{Reliability:} Defined SLO/SLI program for platform services leading to reduced P99 latency and increased availability.
 \end{itemize}
 \end{description}
 
@@ -113,11 +115,11 @@ right=0.5in]{geometry}              % specify right page margin
 \textit{Platform Engineering position focused on both software development of platform APIs and platform management. Position includes a 24x7 on-call shift. Designed and implemented Kubernetes in the datacenter. Provide high-level customer support as the Kubernetes platform subject matter expert. Provide L4 support for the prior application platform, VMware Tanzu.} \\
 \vspace{-6.5pt}
 \begin{itemize}
-  \item \textbf{Leadership:} Designed and implemented team mentorship program to improve shared team knowledge.
-  \item \textbf{Metrics:} Designed and implemented metrics and logging infrastructure for Kubernetes to egress metrics and logs from datacenter to Google Cloud.
   \item \textbf{Application:} Developed a terraform process to create Kubernetes clusters. Process improved Kubernetes customer cluster onboarding down from 2 business weeks to 15 minutes.
   \item \textbf{Application:} Developed terraform providers and APIs to bridge Rancher Kubernetes and Terraform using Golang.
   \item \textbf{Application:} Developed Github Actions to automate building of operating system and container images.
+  \item \textbf{Leadership:} Designed and ran team mentorship and people-development programs, and maintained an open-door 1:1 practice to improve shared knowledge and ramp.
+  \item \textbf{Metrics:} Designed and implemented metrics and logging infrastructure for Kubernetes to egress metrics and logs from datacenter to Google Cloud.
   \item \textbf{Reliability:} Developed node exporter providing additional metrics of Kubernetes node information in Prometheus format in Golang.
   \item \textbf{Reliability:} Developed node smoke test application to provide real-time cluster status information in Golang.
   \item \textbf{Reliability:} Analyzed metrics usage and was able to reduce recurring cost by half.
@@ -130,8 +132,8 @@ right=0.5in]{geometry}              % specify right page margin
 \textit{Systems Engineering position focused on both platform management. Position includes a 24x7 on-call shift. Provide high-level customer support. Develop standard template for documentation to improve developer experience with increased ability to document team and external documentation.} \\
 \vspace{-6.5pt}
 \begin{itemize}
-  \item \textbf{Documentation:} Created documentation to assist both team standard operating procedure and customers for VMware Tanzu.
   \item \textbf{Application:} Worked to migrate 1000+ applications on VMware Tanzu from CFLINUXFS2 to CFLINUXFS3 over a 3-day period.
+  \item \textbf{Documentation:} Created documentation to assist both team standard operating procedure and customers for VMware Tanzu.
   \item \textbf{Reliability:} Maintain supported and secure VMware Tanzu through multiple upgrades.
   \item \textbf{Reliability:} Bring stability to the VMware Tanzu by integrating Min.io, an S3 data backend, significantly reducing customer impact during maintenance windows. 
 \end{itemize}
@@ -142,8 +144,8 @@ right=0.5in]{geometry}              % specify right page margin
 \textit{Designed and implemented automated test tool framework to improve validation of software. Provided high level customer support as an interface between the customer and the development team. Designed and maintained secure lab network providing test framework for 100+ devices and 5000+ virtual devices. Provided manual analysis of reports to validate software stack.} \\
 \vspace{-6.5pt}
 \begin{itemize}
-  \item \textbf{Documentation:} Produce method of procedure maintenance guidelines, produce recommended security practices documentation, for customer integration of products.
   \item \textbf{Application:} Built, tested, documented and maintained software regression testing tool suite reducing testing cycle from months to weeks. 
+  \item \textbf{Documentation:} Produce method of procedure maintenance guidelines, produce recommended security practices documentation, for customer integration of products.
   \item \textbf{Reliability:} Designed complex networking configuration for lab testing environment, including network monitoring of all traffic for analysis.
   \item \textbf{Reliability:} Maintain thousands of Linux container instances (LXC, docker) in datacenter.
   \item \textbf{Reliability:} Maintain hundreds of virtual machines (KVM/QEMU, VirtualBox, VMware).
@@ -155,9 +157,9 @@ right=0.5in]{geometry}              % specify right page margin
 \textit{Enrolled in the Technical Degree Sponsorship Program with the US Air Force as an Airman First Class to complete required service.} \\
 \vspace{-6.5pt}
 \begin{itemize}
-  \item \textbf{Documentation:} Compiled and wrote documentation of program development and subsequent revisions, inserting comments in the coded instructions so others could understand the program.
   \item \textbf{Application:} Built, tested, and/or modified prototypes using workflow models or theoretical models constructed with computer simulation.
   \item \textbf{Application:} Prepared detailed workflow charts and diagrams that described input, output, and logical operation and converted them into a series of instructions coded in a computer language.
+  \item \textbf{Documentation:} Compiled and wrote documentation of program development and subsequent revisions, inserting comments in the coded instructions so others could understand the program.
 \end{itemize}
 \end{description}
 
