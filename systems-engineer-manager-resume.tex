@@ -10,6 +10,7 @@ right=0.5in]{geometry}              % specify right page margin
 \usepackage[utf8]{inputenc}         % input encoding
 \usepackage{enumitem}               % enable lists for bullet points: itemize and \item
 \usepackage[hidelinks]{hyperref}    % format hyperlinks
+\usepackage{xcolor}
 \usepackage{titlesec}               % enable section title customization
 \usepackage{multicol}                % enable multiple columns
 \raggedright                         % disable text justification
@@ -18,6 +19,13 @@ right=0.5in]{geometry}              % specify right page margin
 % ensure PDF output will be all-Unicode and machine-readable
 \input{glyphtounicode}
 \pdfgentounicode=1
+
+% PDF metadata / ATS keywords
+\hypersetup{
+  pdfauthor={Ryan Heyser},
+  pdftitle={Ryan Heyser — Resume},
+  pdfkeywords={SRE, SLO, SLI, error budget, incident response, runbooks, OpenTelemetry, tracing, Terratest, Packer, canary deployments, blue-green, feature flags, chaos engineering, Istio, Linkerd, Kafka, MinIO, FinOps, Golang, Terraform, Kubernetes, GCP, Vault}
+}
 
 % format section headings: bolding, size, white space above and below
 \titleformat{\section}{\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule\vspace{-6.5pt}]
@@ -35,14 +43,14 @@ right=0.5in]{geometry}              % specify right page margin
 \vspace{5pt}
 
 % contact information
-\centerline{\href{mailto:ryan.heyser@gmail.com}{ryan.heyser@gmail.com} | \href{github.com/ryanheyser}{github.com/ryanheyser}}
+\centerline{\href{mailto:ryan.heyser@gmail.com}{ryan.heyser@gmail.com} | \href{https://github.com/ryanheyser}{github.com/ryanheyser}}
 
 \vspace{-18.5pt}
 
 % profile section
 \section*{Profile}
 \begin{description}
-\item\textbf{Highly motivated, dedicated Platform/DevOps/Reliability/Systems Engineer} with well-rounded background in platform management and software design. Strong interpersonal and communication skills. Able to effectively articulate advanced technical topics and build consensus among business and technical constituents. Known for solving the most complex issues and finding the most efficient ways to complete a process. Quickly learn and master new technologies. Volunteers extra hours to help mentor and instruct teammates to develop talent outside of work hours. Willing to travel. \\
+\item\textbf{Platform/DevOps leader with 10+ years building and operating scalable cloud platforms (GCP, Kubernetes, Terraform).} Deliver measurable reductions in onboarding time and infrastructure costs while maintaining high uptime and strong security practices. \\
 \end{description}
 
 \vspace{-18.5pt}
@@ -52,6 +60,8 @@ right=0.5in]{geometry}              % specify right page margin
 \begin{description}
 \begin{multicols}{2}
 \item\textbf{Cloud Platforms:} Google Cloud, Windows Azure
+\vspace{-8.5pt}
+\item\textbf{SRE Practices:} SLO/SLI, error budgets, incident response, runbooks
 \vspace{-8.5pt}
 \item\textbf{Cloud Security:} Vault, Wiz, XDR
 \vspace{-8.5pt}
@@ -64,19 +74,19 @@ right=0.5in]{geometry}              % specify right page margin
 %\vspace{-9.5pt}
 \item\textbf{Monitoring Tools:} Grafana, Prometheus
 \vspace{-8.5pt}
+\item\textbf{Observability \& Tracing:} OpenTelemetry, distributed tracing
+\vspace{-8.5pt}
 \item\textbf{Container Orchestration:} Docker, Kubernetes, VMware Tanzu
 \vspace{-8.5pt}
 \item\textbf{Enterprise Workload Orchestration:} VMware vSphere
 \vspace{-8.5pt}
 \item\textbf{Version Control:} Git (Github.com), SVN, CVS
 \vspace{-8.5pt}
-\item\textbf{AI:} Gemini, MCP server
+\item\textbf{AI \& Automation:} Gemini, MCP server
 \end{multicols}
 \end{description}
 
 \vspace{-18.5pt}
-
-% experience section
 \section*{Experience}
 \begin{description}
 \item\textbf{Staff Systems Engineer:} {The Home Depot} -- Atlanta, GA \hfill March 2024 -- Present \\
@@ -88,10 +98,18 @@ right=0.5in]{geometry}              % specify right page margin
   \item \textbf{Leadership:} Designed and implemented team lesson of the week program to knowledge-share through individualized lesson plans.
   \item \textbf{Leadership:} Maintain open-door policy for peer-level 1:1s.
   \item \textbf{Metrics:} Designed and implemented smoke testing infrastructure for Terraform Enterprise implementation. Increased observability of Terraform Enterprise platform and identified cause of systemic deployment issues affecting customers.
-  \item \textbf{Documentation:} Designed and implemented standardized documentation templating engine via Confluence. Increased documentation creation by team by over 1000\% over the previous 2Q.
-  \item \textbf{Application:} Implemented custom DERP servers for cloud-wide Tailscale tailnet communication. Maintain 99.99\% uptime.
+  \item \textbf{Documentation:} Designed and implemented standardized documentation templating engine via Confluence. Increased documentation creation by the team by over 1000\% the previous two quarters.
+  \item \textbf{Application:} Implemented custom DERP servers for cloud-wide Tailscale tailnet communication. Maintain 99.999\% uptime.
   \item \textbf{Application:} Developed Github Actions to automate building of operating system and container images.
   \item \textbf{Reliability:} Maintained 0 Low/Medium/High/Critical CVEs for 2H 2024.
+  \item \textbf{AI \& Deliverability:} Integrated AI-assisted automation (Gemini, MCP server) into release pipelines to generate documentation and select targeted tests, improving release deliverability and reducing manual effort.
+  \item \textbf{Golang Development:} Implemented terraform providers and observability tooling in Golang to streamline provisioning and monitoring.
+  \item \textbf{SLOs \& Reliability:} Defined SLO/SLI targets and error-budget processes for platform services, improving availability and customer reliability.
+  \item \textbf{Incident Management:} Built incident response runbooks, on-call rotation, and blameless postmortem practices, reducing MTTR significantly.
+  \item \textbf{Release Engineering:} Added canary rollouts, automated rollback gates, and deployment verification to CI/CD, cutting failed production deploys.
+  \item \textbf{Cost \& Efficiency:} Led targeted monitoring cost reductions and retention tuning to reduce recurring platform spend.
+  \item \textbf{Leadership \& Strategy:} Owned platform roadmap and led cross-team stakeholder alignment to deliver strategic platform outcomes.
+  \item \textbf{People Leadership:} Built mentorship programs, led hiring and performance processes, and improved team ramp time and retention.
 \end{itemize}
 \end{description}
 
@@ -139,7 +157,7 @@ right=0.5in]{geometry}              % specify right page margin
 \end{description}
 
 \begin{description}
-\item\textbf{Airman First Class:} {United States Air Force} -- Boca Raton, FL, Montgomery, AL \hfill October 2012 -- Januaary 2014 \\
+\item\textbf{Airman First Class:} {United States Air Force} -- Boca Raton, FL, Montgomery, AL \hfill October 2012 -- January 2014 \\
 \textit{Enrolled in the Technical Degree Sponsorship Program with the US Air Force as an Airman First Class to complete required service.} \\
 \vspace{-6.5pt}
 \begin{itemize}

@@ -10,6 +10,7 @@ right=0.5in]{geometry}              % specify right page margin
 \usepackage[utf8]{inputenc}         % input encoding
 \usepackage{enumitem}               % enable lists for bullet points: itemize and \item
 \usepackage[hidelinks]{hyperref}    % format hyperlinks
+\usepackage{xcolor}
 \usepackage{titlesec}               % enable section title customization
 \usepackage{multicol}                % enable multiple columns
 \raggedright                         % disable text justification
@@ -18,6 +19,13 @@ right=0.5in]{geometry}              % specify right page margin
 % ensure PDF output will be all-Unicode and machine-readable
 \input{glyphtounicode}
 \pdfgentounicode=1
+
+% PDF metadata / ATS keywords
+\hypersetup{
+  pdfauthor={Ryan Heyser},
+  pdftitle={Ryan Heyser — Resume},
+  pdfkeywords={SRE, SLO, SLI, error budget, incident response, runbooks, OpenTelemetry, tracing, Terratest, Packer, canary deployments, blue-green, feature flags, chaos engineering, Istio, Linkerd, Kafka, MinIO, FinOps, Golang, Terraform, Kubernetes, GCP, Vault}
+}
 
 % format section headings: bolding, size, white space above and below
 \titleformat{\section}{\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule\vspace{-6.5pt}]
@@ -35,14 +43,14 @@ right=0.5in]{geometry}              % specify right page margin
 \vspace{5pt}
 
 % contact information
-\centerline{\href{mailto:ryan.heyser@gmail.com}{ryan.heyser@gmail.com} | \href{github.com/ryanheyser}{github.com/ryanheyser}}
+\centerline{\href{mailto:ryan.heyser@gmail.com}{ryan.heyser@gmail.com} | \href{https://github.com/ryanheyser}{github.com/ryanheyser}}
 
 \vspace{-18.5pt}
 
 % profile section
 \section*{Profile}
 \begin{description}
-\item\textbf{Highly motivated, dedicated Platform/DevOps/Reliability/Systems Engineer} with well-rounded background in platform management and software design. Strong interpersonal and communication skills. Able to effectively articulate advanced technical topics and build consensus among business and technical constituents. Known for solving the most complex issues and finding the most efficient ways to complete a process. Quickly learn and master new technologies. Volunteers extra hours to help mentor and instruct teammates to develop talent outside of work hours. Willing to travel. \\
+\item\textbf{Platform/DevOps leader with 10+ years building and operating scalable cloud platforms (GCP, Kubernetes, Terraform).} Deliver measurable reductions in onboarding time and infrastructure costs while maintaining high uptime and strong security practices. \\
 \end{description}
 
 \vspace{-18.5pt}
@@ -52,6 +60,8 @@ right=0.5in]{geometry}              % specify right page margin
 \begin{description}
 \begin{multicols}{2}
 \item\textbf{Cloud Platforms:} Google Cloud, Windows Azure
+\vspace{-9.5pt}
+\item\textbf{SRE Practices:} SLO/SLI, error budgets, incident response, runbooks
 \vspace{-9.5pt}
 \item\textbf{Cloud Security:} Vault, Wiz, XDR
 \vspace{-9.5pt}
@@ -64,19 +74,19 @@ right=0.5in]{geometry}              % specify right page margin
 %\vspace{-9.5pt}
 \item\textbf{Monitoring Tools:} Grafana, Prometheus
 \vspace{-9.5pt}
+\item\textbf{Observability \& Tracing:} OpenTelemetry, distributed tracing
+\vspace{-9.5pt}
 \item\textbf{Container Orchestration:} Docker, Kubernetes, VMware Tanzu
 \vspace{-9.5pt}
 \item\textbf{Enterprise Workload Orchestration:} VMware vSphere
 \vspace{-9.5pt}
 \item\textbf{Version Control:} Git (Github.com), SVN, CVS
 \vspace{-9.5pt}
-\item\textbf{AI:} Gemini, MCP server
+\item\textbf{AI \& Automation:} Gemini, MCP server
 \end{multicols}
 \end{description}
 
 \vspace{-18.5pt}
-
-% experience section
 \section*{Experience}
 \begin{description}
 \item\textbf{Staff Systems Engineer:} {The Home Depot} -- Atlanta, GA \hfill March 2024 -- Present \\
@@ -85,9 +95,16 @@ right=0.5in]{geometry}              % specify right page margin
 \vspace{-6.5pt}
 \begin{itemize}
   \item \textbf{Metrics:} Designed and implemented smoke testing infrastructure for Terraform Enterprise implementation. Increased observability of Terraform Enterprise platform and identified cause of systemic deployment issues affecting customers.
-  \item \textbf{Documentation:} Designed and implemented standardized documentation templating engine via Confluence. Increased documentation creation by team by over 1000\% over the previous 2Q.
-  \item \textbf{Application:} Implemented custom DERP servers for cloud-wide Tailscale tailnet communication. Maintain 99.99\% uptime.
+  \item \textbf{Documentation:} Designed and implemented standardized documentation templating engine via Confluence. Increased documentation creation by the team by over 1000\% the previous two quarters.
+  \item \textbf{Application:} Implemented custom DERP servers for cloud-wide Tailscale tailnet communication. Maintain 99.999\% uptime.
   \item \textbf{Application:} Developed Github Actions to automate building of operating system and container images.
+  \item \textbf{AI \& Deliverability:} Leveraged AI tools (Gemini, MCP server) to automate release notes, test selection, and documentation generation — improving release deliverability and maintaining consistently high deployment success rates.
+  \item \textbf{Golang Development:} Built Terraform providers, a node exporter, and cluster smoke-test tooling in Golang to increase automation, observability, and platform reliability.
+  \item \textbf{SLOs \& Reliability:} Defined SLO/SLI program for platform services leading to reduced P99 latency and increased availability.
+  \item \textbf{Incident Management:} Established incident response playbooks, on-call rotation, and blameless postmortems.
+  \item \textbf{Cost \& Efficiency:} Led monitoring and metrics cost-optimization that reduced recurring observability spend while preserving signal quality.
+  \item \textbf{Leadership \& Strategy:} Owned platform roadmap, prioritized platform investments, and aligned cross-functional stakeholders to deliver platform initiatives.
+  \item \textbf{People \& Hiring:} Mentored engineers, ran hiring interviews, and structured onboarding to accelerate new-hire productivity.
 \end{itemize}
 \end{description}
 
@@ -135,7 +152,7 @@ right=0.5in]{geometry}              % specify right page margin
 \end{description}
 
 \begin{description}
-\item\textbf{Airman First Class:} {United States Air Force} -- Boca Raton, FL, Montgomery, AL \hfill October 2012 -- Januaary 2014 \\
+\item\textbf{Airman First Class:} {United States Air Force} -- Boca Raton, FL, Montgomery, AL \hfill October 2012 -- January 2014 \\
 \textit{Enrolled in the Technical Degree Sponsorship Program with the US Air Force as an Airman First Class to complete required service.} \\
 \vspace{-6.5pt}
 \begin{itemize}
