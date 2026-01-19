@@ -49,7 +49,7 @@ right=0.5in]{geometry}              % specify right page margin
 % profile section
 \section*{Profile}
 \begin{description}
-\item\textbf{Platform/DevOps leader with 10+ years building and operating scalable cloud platforms (GCP, Kubernetes, Terraform).} Deliver measurable reductions in onboarding time and infrastructure costs while maintaining high uptime and strong security practices. \\
+\item\textbf{Platform/DevOps leader with 10+ years building and operating scalable cloud platforms (GCP, Kubernetes, Terraform).} Experienced in driving DevSecOps transformations—policy-as-code, secrets management, and IaC scanning—while delivering measurable reductions in onboarding time and infrastructure costs and maintaining high uptime and strong security practices. \\
 \end{description}
 
 \vspace{-18.5pt}
@@ -58,37 +58,63 @@ right=0.5in]{geometry}              % specify right page margin
 \section*{Skills}
 \begin{description}
 \begin{multicols}{2}
-\item\textbf{Cloud Platforms:} Google Cloud, Windows Azure
+\item\textbf{AI \& Automation:} Gemini, MCP server
 \vspace{-9.5pt}
-\item\textbf{SRE Practices:} SLO/SLI, error budgets, incident response, runbooks
+\item\textbf{CI / CD:} ArgoCD, GitHub Actions, Jenkins
+\vspace{-9.5pt}
+\item\textbf{Cloud Platforms:} Google Cloud, Windows Azure
 \vspace{-9.5pt}
 \item\textbf{Cloud Security:} Vault, Wiz, XDR
 \vspace{-9.5pt}
-\item\textbf{Programming Languages:} Golang, Python, Bash
+\item\textbf{Container Orchestration:} Docker, Kubernetes, VMware Tanzu
 \vspace{-9.5pt}
-\item\textbf{Infrastructure as Code:} Terraform, Ansible
+\item\textbf{DevSecOps:} HashiCorp Vault, IaC scanning, Sentinel/OPA, secrets management
 \vspace{-9.5pt}
-\item\textbf{GitOps:} Fluxcd, Argocd
+\item\textbf{Enterprise Workload Orchestration:} VMware vSphere
 \columnbreak
+\item\textbf{GitOps:} Argocd, Fluxcd
+\vspace{-9.5pt}
+\item\textbf{Infrastructure as Code:} Ansible, Terraform
+\vspace{-9.5pt}
 \item\textbf{Monitoring Tools:} Grafana, Prometheus
 \vspace{-9.5pt}
-\item\textbf{Observability \& Tracing:} OpenTelemetry, distributed tracing
+\item\textbf{Observability \& Tracing:} OpenTelemetry
+\vspace{-9.5pt}
+\item\textbf{Programming Languages:} Bash, Golang, Python
 \vspace{-9.5pt}
 \item\textbf{Service Mesh:} Istio, Linkerd
 \vspace{-9.5pt}
-\item\textbf{CI / CD:} GitHub Actions, Jenkins, ArgoCD
-\vspace{-9.5pt}
-\item\textbf{Container Orchestration:} Docker, Kubernetes, VMware Tanzu
-\vspace{-9.5pt}
-\item\textbf{Enterprise Workload Orchestration:} VMware vSphere
-\vspace{-9.5pt}
-\item\textbf{Version Control:} Git (Github.com), SVN, CVS
-\vspace{-9.5pt}
-\item\textbf{AI \& Automation:} Gemini, MCP server
+\item\textbf{Version Control:} CVS, Git (Github.com), SVN
 \end{multicols}
 \end{description}
 
 \vspace{-18.5pt}
+% projects section
+\section*{Projects}
+\begin{description}
+\item\textbf{Homelab} \hfill \href{https://github.com/ryanheyser/homelab-ops}{github.com/ryanheyser/homelab-ops} | \href{https://github.com/ryanheyser/homelab-infrastructure}{github.com/ryanheyser/homelab-infrastructure} \\
+\item\textit{Project to build and maintain homelab through Devops and Infrastructure-as-Code.} \\
+\vspace{-6.5pt}
+\begin{itemize}
+  \item Bootstrap Ubuntu virtual machine image via Cloud Init.
+  \item Configure Proxmox VE via Ansible.
+  \item Deploy Rancher Kubernetes Engine cluster via Ansible Playbook and configure the cluster to be managed by Fluxcd.
+  \item Secrets management via HashiCorp Vault and integration with Kubernetes via External Secrets Operator.
+\end{itemize}
+\end{description}
+
+\vspace{-18.5pt}
+
+% education section
+\section*{Education}
+\begin{description}
+\item\textbf{Florida Atlantic University} -- MS in Computer Engineering \hfill August 2013
+\vspace{-9.5pt}
+\item\textbf{Georgia Institute of Technology} -- BS in Computer Engineering \hfill August 2011
+\end{description}
+
+\vspace{-18.5pt}
+
 \section*{Experience}
 \begin{description}
 \item\textbf{Staff Systems Engineer:} {The Home Depot} -- Atlanta, GA \hfill March 2024 -- Present \\
@@ -106,6 +132,7 @@ right=0.5in]{geometry}              % specify right page margin
   \item \textbf{Leadership:} Owned platform roadmap, prioritized platform investments, and aligned cross-functional stakeholders; led hiring, mentorship, and onboarding programs to accelerate new-hire productivity and retention.
   \item \textbf{Metrics:} Designed and implemented smoke testing infrastructure for Terraform Enterprise implementation. Increased observability of Terraform Enterprise platform and identified cause of systemic deployment issues affecting customers.
   \item \textbf{Reliability:} Defined SLO/SLI program for platform services leading to reduced P99 latency and increased availability.
+  \item \textbf{Security:} Integrated policy-as-code (Sentinel/OPA) into Terraform pipelines to enforce guardrails and prevent insecure infrastructure changes.
 \end{itemize}
 \end{description}
 
@@ -123,6 +150,7 @@ right=0.5in]{geometry}              % specify right page margin
   \item \textbf{Reliability:} Developed node exporter providing additional metrics of Kubernetes node information in Prometheus format in Golang.
   \item \textbf{Reliability:} Developed node smoke test application to provide real-time cluster status information in Golang.
   \item \textbf{Reliability:} Analyzed metrics usage and was able to reduce recurring cost by half.
+  \item \textbf{Security:} Introduced IaC scanning into CI to detect misconfigurations earlier, reducing remediation time and preventing insecure deployments.
 \end{itemize}
 \end{description}
 
@@ -164,28 +192,4 @@ right=0.5in]{geometry}              % specify right page margin
 \end{description}
 
 \vspace{-18.5pt}
-
-% projects section
-\section*{Projects}
-\begin{description}
-\item\textbf{Homelab} \hfill \href{https://github.com/ryanheyser/homelab-ops}{github.com/ryanheyser/homelab-ops} | \href{https://github.com/ryanheyser/homelab-infrastructure}{github.com/ryanheyser/homelab-infrastructure} \\
-\item\textit{Project to build and maintain homelab through Devops and Infrastructure-as-Code.} \\
-\vspace{-6.5pt}
-\begin{itemize}
-  \item Bootstrap Ubuntu virtual machine image via Cloud Init.
-  \item Configure Proxmox VE via Ansible.
-  \item Deploy Rancher Kubernetes Engine cluster via Ansible Playbook and configure the cluster to be managed by Fluxcd.
-\end{itemize}
-\end{description}
-
-\vspace{-18.5pt}
-
-% education section
-\section*{Education}
-\begin{description}
-\item\textbf{Florida Atlantic University} -- MS in Computer Engineering \hfill August 2013
-\vspace{-9.5pt}
-\item\textbf{Georgia Institute of Technology} -- BS in Computer Engineering \hfill August 2011
-\end{description}
-
 \end{document}
