@@ -51,7 +51,7 @@ jobs:
     - name: ${{ matrix.title }} upload PDF to the workflow tab
       if: ${{ hashFiles(format('{0}-resume.pdf', matrix.id)) != '' }}
       id: upload-workflow-tab
-      uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+      uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
       with:
         name: ${{ matrix.id }}-resume
         path: ${{ matrix.id }}-resume.pdf
