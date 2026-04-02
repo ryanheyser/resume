@@ -39,7 +39,7 @@ jobs:
     - name: ${{ matrix.title }} latex2pdf
       if: ${{ hashFiles('systems-engineer-principal-resume.tex') != '' }}
       id: compile-latex-document
-      uses: xu-cheng/latex-action@25080975331dc4fc8e6f1af55788e00f84f51fff # v4.0.0
+      uses: xu-cheng/latex-action@6549dc21effb2730855a1281407ecfcececc6c1b # 4.1.0
       with:
         root_file: ${{ matrix.latexfile }}
         # renovate: 
