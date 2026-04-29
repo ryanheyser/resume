@@ -30,23 +30,21 @@ jobs:
       with:
         egress-policy: audit
 
-    - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+    - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         fetch-depth: 1
         ref: main
 
-    - name: Determine correct TeX Live path
-      id: determine-texlive-path
+    - name: Prepare TeX Live cache path
       run: |
-        TEXMFHOME=$(tlmgr conf texmf TEXMFHOME | awk 'NF>1{print $NF}')
-        echo "::set-output name=texlive_path::$TEXMFHOME"
-
-    - name: Install TeX Live cache dependencies
-      id: texlive-cache-restore
+        mkdir -p $HOME/texmf-cache
+        echo "TEXMFHOME=$HOME/texmf-cache" >> $GITHUB_ENV
+    
+    - name: Restore TeX Live cache
       uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
       with:
-        path: ${{ steps.determine-texlive-path.outputs.texlive_path || '~/texlive' }}
+        path: $HOME/texmf-cache
         key: texlive-cache-${{ runner.os }}-${{ hashFiles('**/*.tex') }}
         restore-keys: texlive-cache-
 
@@ -59,11 +57,19 @@ jobs:
         docker_image: ghcr.io/xu-cheng/texlive-alpine@sha256:8b4a00b6a17ebe6b96dee107d82f0cb3eb40daf322f1e23809a9be26486963dd # 20260401
         extra_system_packages: "inkscape ghostscript"
         pre_compile: |
+          TEXMFHOME=${{ env.TEXMFHOME }}
           tlmgr option repository https://mirror.ctan.org/systems/texlive/tlnet
           tlmgr update --self
           tlmgr update --all
         post_compile: "latexmk -c"
-  
+    
+    - name: Cache updated TeX Live packages
+      uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
+      with:
+        path: ${{ env.TEXMFHOME }}
+        key: texlive-cache-${{ runner.os }}-${{ hashFiles('**/*.tex') }}
+        restore-keys: texlive-cache-
+
     - name: ${{ matrix.title }} upload PDF to the workflow tab
       if: ${{ hashFiles(format('{0}-resume.pdf', matrix.id)) != '' }}
       id: upload-workflow-tab
