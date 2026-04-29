@@ -39,8 +39,7 @@ jobs:
     - name: Determine correct TeX Live path
       id: determine-texlive-path
       run: |
-        TEXMFHOME=$(tlmgr conf texmf TEXMFHOME | awk 'NF>1{print $NF}')
-        echo "::set-output name=texlive_path::$TEXMFHOME"
+        echo "::set-output name=texlive_path::$(tlmgr conf texmf TEXMFHOME | awk 'NF>1{print $NF}')"
 
     - name: Install TeX Live cache dependencies
       id: texlive-cache-restore
