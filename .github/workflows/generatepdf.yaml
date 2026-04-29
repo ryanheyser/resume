@@ -35,6 +35,7 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         fetch-depth: 1
         ref: main
+        path: ${{ runner.workspace }}
         sparse-checkout: |
           ${{ matrix.latexfile }}
 
@@ -44,7 +45,7 @@ jobs:
 
     - name: Copy ${{ matrix.latexfile }} to the runner workspace
       run: |
-        cp ${{ matrix.latexfile }} ${{ runner.workspace }}/
+        cp ${{ matrix.latexfile }} ${{ runner.workspace }}/texlive/
     
     - name: Restore TeX Live cache
       uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
@@ -58,7 +59,7 @@ jobs:
       id: compile-latex-document
       uses: xu-cheng/latex-action@6549dc21effb2730855a1281407ecfcececc6c1b # 4.1.0
       with:
-        root_file: ../${{ matrix.latexfile }}
+        root_file: ${{ matrix.latexfile }}
         docker_image: ghcr.io/xu-cheng/texlive-alpine@sha256:8b4a00b6a17ebe6b96dee107d82f0cb3eb40daf322f1e23809a9be26486963dd # 20260401
         extra_system_packages: "inkscape ghostscript"
         working_directory: ${{ runner.workspace }}/texlive
