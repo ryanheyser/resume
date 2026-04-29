@@ -8,7 +8,7 @@
       "matchStringsStrategy": "combination",
       "matchStrings": [
         "#(\\s+)?renovate:(\\s+)((\\S)?depName=(?<depName>.*))",
-        "docker_image:(\\s+)?((?<currentValue>.*))",
+        "docker_image:(\\s+)?(?<depName>.*)(?<currentValue>.*)",
       ],
       "datasourceTemplate": "docker",
       //"datasourceTemplate": "{{#if datasource}}{{{datasource}}}{{else}}helm{{/if}}",
