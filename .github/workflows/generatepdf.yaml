@@ -57,7 +57,8 @@ jobs:
         extra_system_packages: "inkscape ghostscript"
         pre_compile: |
           export TEXMFHOME=${{ env.TEXMFHOME }}
-          export TEXMFROOT=${{ env.TEXMFHOME }}
+          echo "TEXMFROOT: ${TEXMFROOT}"
+          echo "TEXMFHOME: ${TEXMFHOME}"
           tlmgr option repository https://mirror.ctan.org/systems/texlive/tlnet
           tlmgr update --self
           tlmgr update --all
