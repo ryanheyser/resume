@@ -38,12 +38,12 @@ jobs:
 
     - name: Prepare TeX Live cache path
       run: |
-        echo "TEXMFHOME=$HOME/texmf-cache" >> $GITHUB_ENV
+        mkdir -p /root/texmf
     
     - name: Restore TeX Live cache
       uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
       with:
-        path: $HOME/texmf-cache
+        path: /root/texmf
         key: texlive-cache-${{ runner.os }}-${{ hashFiles('**/*.tex') }}
         restore-keys: texlive-cache-
 
@@ -56,7 +56,6 @@ jobs:
         docker_image: ghcr.io/xu-cheng/texlive-alpine@sha256:8b4a00b6a17ebe6b96dee107d82f0cb3eb40daf322f1e23809a9be26486963dd # 20260401
         extra_system_packages: "inkscape ghostscript"
         pre_compile: |
-          export TEXMFHOME=${{ env.TEXMFHOME }}
           echo "tlmgr conf: $(tlmgr conf)"
           echo "tlmgr conf texmf: $(tlmgr conf texmf)"          
           tlmgr option repository https://mirror.ctan.org/systems/texlive/tlnet
@@ -67,7 +66,7 @@ jobs:
     - name: Cache updated TeX Live packages
       uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
       with:
-        path: ${{ env.TEXMFHOME }}
+        path: /root/texmf
         key: texlive-cache-${{ runner.os }}-${{ hashFiles('**/*.tex') }}
         restore-keys: texlive-cache-
 
