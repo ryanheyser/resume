@@ -35,7 +35,6 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         fetch-depth: 1
         ref: main
-        path: ${{ runner.workspace }}
         sparse-checkout: |
           ${{ matrix.latexfile }}
 
