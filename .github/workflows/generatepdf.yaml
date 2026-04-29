@@ -36,6 +36,14 @@ jobs:
         fetch-depth: 1
         ref: main
     
+    - name: Install TeX Live cache dependencies
+      id: texlive-cache-restore
+      uses: actions/cache@v3
+      with:
+        path: ~/texlive
+        key: texlive-cache-${{ runner.os }}-${{ hashFiles('**/*.tex') }}
+        restore-keys: texlive-cache-
+
     - name: ${{ matrix.title }} latex2pdf
       if: ${{ hashFiles('systems-engineer-principal-resume.tex') != '' }}
       id: compile-latex-document
