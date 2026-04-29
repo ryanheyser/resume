@@ -35,10 +35,16 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         fetch-depth: 1
         ref: main
+        sparse-checkout: |
+          ${{ matrix.latexfile }}
 
     - name: Prepare TeX Live cache path
       run: |
         mkdir -p ${{ runner.workspace }}/texlive
+
+    - name: Copy ${{ matrix.latexfile }} to the runner workspace
+      run: |
+        cp ${{ matrix.latexfile }} ${{ runner.workspace }}/
     
     - name: Restore TeX Live cache
       uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
@@ -57,6 +63,7 @@ jobs:
         extra_system_packages: "inkscape ghostscript"
         working_directory: ${{ runner.workspace }}/texlive
         pre_compile: |
+          ls -al ${HOME}
           echo "tlmgr conf: $(tlmgr conf)"
           echo "tlmgr conf texmf: $(tlmgr conf texmf)"          
           tlmgr option repository https://mirror.ctan.org/systems/texlive/tlnet
