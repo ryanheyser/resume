@@ -42,10 +42,12 @@ jobs:
       uses: xu-cheng/latex-action@6549dc21effb2730855a1281407ecfcececc6c1b # 4.1.0
       with:
         root_file: ${{ matrix.latexfile }}
-        # renovate: 
         docker_image: ghcr.io/xu-cheng/texlive-alpine@sha256:8b4a00b6a17ebe6b96dee107d82f0cb3eb40daf322f1e23809a9be26486963dd # 20260401
         extra_system_packages: "inkscape ghostscript"
-        pre_compile: "tlmgr update --self && tlmgr update --all"
+        pre_compile: |
+          tlmgr option repository https://mirror.ctan.org/systems/texlive/tlnet
+          tlmgr update --self
+          tlmgr update --all
         post_compile: "latexmk -c"
     
     - name: ${{ matrix.title }} upload PDF to the workflow tab
