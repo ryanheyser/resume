@@ -38,7 +38,7 @@ jobs:
     
     - name: Install TeX Live cache dependencies
       id: texlive-cache-restore
-      uses: actions/cache@v5 # SHA256:27d5ce7f107fe9357f9df03efb73ab90386fccae
+      uses: actions/cache@sha256:27d5ce7f107fe9357f9df03efb73ab90386fccae # v5
       with:
         path: ~/texlive
         key: texlive-cache-${{ runner.os }}-${{ hashFiles('**/*.tex') }}
