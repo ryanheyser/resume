@@ -1,0 +1,16 @@
+{
+  "packageRules": [
+    // auto-updates - daily
+    {
+      "datasources": ["docker"],
+      "automerge": true,
+      "automergeType": "branch",
+      "requiredStatusChecks": null,
+      "schedule": "after 1am and before 5am",
+      "updateTypes": ["minor", "patch"],
+      "packageNames": [
+        "ghcr.io/xu-cheng/texlive-alpine"
+      ]
+    }
+  ]
+}

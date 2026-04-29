@@ -9,6 +9,7 @@
     ':automergeDigest',
     ':automergeBranch',
     'github>ryanheyser/resume//.github/renovate/automerge-github-actions.json5',
+    'github>ryanheyser/resume//.github/renovate/automerge.json5',
   ],
   enabled: true,
   timezone: 'America/New_York',
