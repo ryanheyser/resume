@@ -3,9 +3,8 @@
   customManagers: [
     {
       "customType": "regex",
-      "description": "Process rke2_version",
-      "fileMatch": ["rke2(-agent|-server)?-plan\\.y(a)?ml$"],
-      "ignorePaths": ["flux-system/**"],
+      "description": "Process docker_image version",
+      "fileMatch": ["generatepdf\\.y(a)?ml$"],
       "matchStringsStrategy": "combination",
       "matchStrings": [
         "#(\\s+)?renovate:(\\s+)((\\S)?depName=(?<depName>.*))",
