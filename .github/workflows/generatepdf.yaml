@@ -69,7 +69,7 @@ jobs:
     - name: Cache updated TeX Live packages
       uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
       with:
-        path: ${{ runner.workspace }}/texlive
+        path: ${{ runner.workspace }}
         key: texlive-cache-${{ matrix.id }}-${{ runner.os }}-${{ hashFiles('**/*') }}
         restore-keys: texlive-cache-${{ matrix.id }}
 
