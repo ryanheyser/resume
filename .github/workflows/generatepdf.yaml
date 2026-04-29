@@ -43,7 +43,7 @@ jobs:
       with:
         root_file: ${{ matrix.latexfile }}
         # renovate: 
-        docker_image: ghcr.io/xu-cheng/texlive-alpine@sha256:9aa57c8ddef934cb1f25837539c654980680ea4d42554a05ca7a672845ebfe6a # 20260101
+        docker_image: ghcr.io/xu-cheng/texlive-alpine@sha256:8b4a00b6a17ebe6b96dee107d82f0cb3eb40daf322f1e23809a9be26486963dd # 20260401
         extra_system_packages: "inkscape ghostscript"
         pre_compile: "tlmgr update --self && tlmgr update --all"
         post_compile: "latexmk -c"
