@@ -38,19 +38,11 @@ jobs:
         sparse-checkout: |
           ${{ matrix.latexfile }}
 
-    - name: Prepare TeX Live cache path
-      run: |
-        mkdir -p ${{ runner.workspace }}/texlive
-
-    - name: Copy ${{ matrix.latexfile }} to the runner workspace
-      run: |
-        cp ${{ matrix.latexfile }} ${{ runner.workspace }}/texlive/
-    
     - name: Restore TeX Live cache
       uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
       with:
-        path: ${{ runner.workspace }}/texlive
-        key: texlive-cache-${{ matrix.id }}-${{ runner.os }}-${{ hashFiles('**/*.tex') }}
+        path: ${{ runner.workspace }}
+        key: texlive-cache-${{ matrix.id }}-${{ runner.os }}-${{ hashFiles('**/*') }}
         restore-keys: texlive-cache-${{ matrix.id }}
 
     - name: ${{ matrix.title }} latex2pdf
@@ -61,7 +53,7 @@ jobs:
         root_file: ${{ matrix.latexfile }}
         docker_image: ghcr.io/xu-cheng/texlive-alpine@sha256:8b4a00b6a17ebe6b96dee107d82f0cb3eb40daf322f1e23809a9be26486963dd # 20260401
         extra_system_packages: "inkscape ghostscript"
-        working_directory: ${{ runner.workspace }}/texlive
+        working_directory: ${{ runner.workspace }}
         pre_compile: |
           ls -al ${HOME}
           echo "tlmgr conf: $(tlmgr conf)"
@@ -75,7 +67,7 @@ jobs:
       uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
       with:
         path: ${{ runner.workspace }}/texlive
-        key: texlive-cache-${{ matrix.id }}-${{ runner.os }}-${{ hashFiles('**/*.tex') }}
+        key: texlive-cache-${{ matrix.id }}-${{ runner.os }}-${{ hashFiles('**/*') }}
         restore-keys: texlive-cache-${{ matrix.id }}
 
     - name: ${{ matrix.title }} upload PDF to the workflow tab
