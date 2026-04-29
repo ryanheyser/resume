@@ -50,8 +50,8 @@ jobs:
       uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
       with:
         path: ${{ runner.workspace }}/texlive
-        key: texlive-cache-${{ runner.os }}-${{ hashFiles('**/*.tex') }}
-        restore-keys: texlive-cache-
+        key: texlive-cache-${{ matrix.id }}-${{ runner.os }}-${{ hashFiles('**/*.tex') }}
+        restore-keys: texlive-cache-${{ matrix.id }}
 
     - name: ${{ matrix.title }} latex2pdf
       if: ${{ hashFiles('systems-engineer-principal-resume.tex') != '' }}
@@ -75,8 +75,8 @@ jobs:
       uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
       with:
         path: ${{ runner.workspace }}/texlive
-        key: texlive-cache-${{ runner.os }}-${{ hashFiles('**/*.tex') }}
-        restore-keys: texlive-cache-
+        key: texlive-cache-${{ matrix.id }}-${{ runner.os }}-${{ hashFiles('**/*.tex') }}
+        restore-keys: texlive-cache-${{ matrix.id }}
 
     - name: ${{ matrix.title }} upload PDF to the workflow tab
       if: ${{ hashFiles(format('{0}-resume.pdf', matrix.id)) != '' }}
