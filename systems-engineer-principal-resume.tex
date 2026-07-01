@@ -4,7 +4,7 @@ top=0.5in,                          % specify top page margin
 bottom=0.5in,                       % specify bottom page margin
 left=0.5in,                         % specify left page margin
 right=0.5in]{geometry}              % specify right page margin
-                       
+
 \usepackage{XCharter}               % set font. comment this line out if you want to use the default LaTeX font Computer Modern
 \usepackage[T1]{fontenc}            % output encoding
 \usepackage[utf8]{inputenc}         % input encoding
@@ -24,7 +24,7 @@ right=0.5in]{geometry}              % specify right page margin
 \hypersetup{
   pdfauthor={Ryan Heyser},
   pdftitle={Ryan Heyser — Resume},
-  pdfkeywords={SRE, SLO, SLI, error budget, incident response, runbooks, OpenTelemetry, tracing, Terratest, Packer, canary deployments, blue-green, feature flags, chaos engineering, Istio, Linkerd, Kafka, MinIO, FinOps, Golang, Terraform, Kubernetes, GCP, Vault}
+  pdfkeywords={SRE, Site Reliability Engineering, SLO, SLI, error budget, production readiness review, PRR, incident response, on-call, runbooks, chaos engineering, destructive testing, load testing, Kubernetes, GKE, CRDs, operators, admission webhooks, Gatekeeper, OPA, RBAC, control plane, Wayfinder, Envoy, xDS, GitOps, Flux, HelmRelease, Kustomization, ArgoCD, OpenTelemetry, Prometheus, Grafana, kube-state-metrics, observability, tracing, Vault, OAuth, JWT, OIDC, Workload Identity, cert-manager, Venafi, secrets management, AlloyDB, PostgreSQL, CloudSQL, BigQuery, VPC, Cloud NAT, IAP, IAM, Tailscale, FinOps, Golang, Python, Terraform, Terraform Enterprise, Sentinel, Trivy, Wiz, Chainguard, GCP}
 }
 
 % format section headings: bolding, size, white space above and below
@@ -50,37 +50,30 @@ right=0.5in]{geometry}              % specify right page margin
 % profile section
 \section*{Profile}
 \begin{description}
-\item\textbf{Platform/DevOps leader with 10+ years building and operating scalable cloud platforms (GCP, Kubernetes, Terraform).} Experienced in driving DevSecOps transformations—policy-as-code, secrets management, and IaC scanning—while delivering measurable reductions in onboarding time and infrastructure costs and maintaining high uptime and strong security practices. \\
+\item\textbf{Site Reliability Engineer and platform leader with 10+ years building, operating, and ensuring the reliability of scalable cloud platforms (GKE, Kubernetes, GCP, Terraform).} Owns reliability quantitatively through SLOs, error budgets, and production-readiness reviews; writes automation and observability tooling in Go and Python that replaces manual runbooks; and translates reliability trade-offs into business outcomes for the 7000+ developers the platform directly supports. Prioritizes platform investment around the majority use case — shipping for the ``80\% customer'' first and solving the long tail as capacity allows. Depth across Kubernetes internals and control-plane management, GitOps delivery, DevSecOps (policy-as-code, secrets management, IaC scanning), and FinOps. \\
 \end{description}
 
 \vspace{-18.5pt}
 
 % skills section
 \section*{Skills}
-\begin{multicols}{2}
 \begin{flushleft}
 \parbox{\linewidth}{\raggedright
+  \textbf{Reliability:} SLO/SLI, error budgets, production-readiness review (PRR), incident response, chaos/destructive \& load testing, PagerDuty\\
+  \textbf{Kubernetes:} CRDs, Operators, Admission Webhooks (Gatekeeper/OPA), RBAC, GKE, Wayfinder, Docker, VMware Tanzu\\
+  \textbf{Control Plane \& Mesh:} Envoy, xDS, Istio, Linkerd, Tailscale\\
+  \textbf{Observability:} OpenTelemetry, Prometheus, Grafana, kube-state-metrics\\
+  \textbf{GitOps \& CI/CD:} Flux (HelmReleases, Kustomizations), ArgoCD, GitHub Actions, Jenkins\\
+  \textbf{Infrastructure as Code:} Terraform, Terraform Enterprise, Sentinel, Ansible\\
+  \textbf{Identity \& Secrets:} Vault, OAuth/JWT/OIDC, Workload Identity, cert-manager, Venafi\\
+  \textbf{Cloud \& Networking:} Google Cloud (GKE, GCE, VPC, Cloud NAT, IAP), Azure\\
+  \textbf{Databases:} AlloyDB, PostgreSQL, CloudSQL, BigQuery\\
+  \textbf{Security:} Sentinel/OPA, Gatekeeper, Trivy, Wiz, Chainguard, IaC scanning\\
+  \textbf{Programming Languages:} Golang, Python, Bash\\
   \textbf{AI \& Automation:} Gemini, MCP server\\
-  \textbf{CI / CD:} ArgoCD, GitHub Actions, Jenkins\\
-  \textbf{Cloud Platforms:} Google Cloud, Windows Azure\\
-  \textbf{Cloud Security:} Vault, Wiz, XDR\\
-  \textbf{Container Orchestration:} Docker, Kubernetes, VMware Tanzu\\
-  \textbf{DevSecOps:} HashiCorp Vault, IaC scanning, Sentinel/OPA, secrets management\\
-  \textbf{Enterprise Workload Orchestration:} VMware vSphere\\
+  \textbf{Version Control:} Git (Github.com), SVN\\
 }
 \end{flushleft}
-\begin{flushright}
-\parbox{\linewidth}{\raggedleft
-  \textbf{GitOps:} Argocd, Fluxcd\\
-  \textbf{Infrastructure as Code:} Ansible, Terraform\\
-  \textbf{Monitoring Tools:} Grafana, Prometheus\\
-  \textbf{Observability \& Tracing:} OpenTelemetry\\
-  \textbf{Programming Languages:} Bash, Golang, Python\\
-  \textbf{Service Mesh:} Istio, Linkerd\\
-  \textbf{Version Control:} CVS, Git (Github.com), SVN\\
-}
-\end{flushright}
-\end{multicols}
 
 \vspace{-18.5pt}
 % projects section
@@ -111,7 +104,28 @@ right=0.5in]{geometry}              % specify right page margin
 
 \section*{Experience}
 \begin{description}
-\item\textbf{Staff Systems Engineer:} {The Home Depot} -- Atlanta, GA \hfill March 2024 -- Present \\
+\item\textbf{Staff Systems Engineer (SRE):} {The Home Depot} -- Atlanta, GA \hfill April 2026 -- Present \\
+\textbf{Team:} Site Reliability Engineering \\
+\textit{Site Reliability Engineering position owning the reliability of The Home Depot's GKE-based application-delivery platform. Position includes a 24x7 on-call shift. Drive production-readiness reviews (PRR), SLO/error-budget programs, and resiliency testing across the platform; serve as reliability subject-matter expert for platform customers.} \\
+\vspace{-6.5pt}
+\begin{itemize}
+  \item \textbf{Customer Communication:} Served as reliability SME for platform customers — running REASSURE PRR engagements and extending the "Gravity" tool to detect and proactively notify customers of outdated Terraform provider versions.
+  \item \textbf{Data:} Operated the platform's managed external data tier (AlloyDB/PostgreSQL) under shared 24x7 on-call — a deliberate, cost-conscious design serving ~80\% of customers with a managed database connection rather than local storage — contributing to production-readiness review, credential hardening, and AlloyDB-to-BigQuery replication reliability.
+  \item \textbf{FinOps:} Refactored Google Compute reservation logic for subnet routers and tuned BigQuery dataset billing, reducing recurring spend without degrading capacity or signal.
+  \item \textbf{Kubernetes:} Drove lifecycle upgrades of 15+ GKE platform components across 50+ non-production and production clusters — Gatekeeper (OPA admission webhooks), OpenTelemetry and Vault Secrets operators, cert-manager with approver-policy, and kube-rbac-proxy — keeping CRDs, operators, admission control, and RBAC current and continuously scanned (Trivy/Wiz).
+  \item \textbf{Kubernetes:} Managed the Envoy/xDS and Appvia Wayfinder control plane and delivered platform components via Flux (HelmReleases and Kustomizations) through a controlled, auditable ``conveyer-belt'' release pipeline, validating routing consistency through rollouts and pod recycles.
+  \item \textbf{Networking:} Engineered Tailscale subnet-router and DERP relay networking across GCP VPCs (Cloud NAT, IAP tunnels, Workload Identity) and led destructive failover tests validating regional traffic shifting during incidents.
+  \item \textbf{Observability:} Operated the observability stack (OpenTelemetry Collector/Operator, kube-state-metrics, Prometheus, Grafana) across 50+ non-production and production clusters — right-sized alerts at creation and remediated noisy alerts and stale metric descriptors on detection to keep signal high — and streamed audit logs to BigQuery for compliance and forensics.
+  \item \textbf{Reliability:} Established the Reliability Engineering practice for the Tailscale platform through the REASSURE production-readiness journey — authored PRRs, defined SLIs/SLOs, and codified destructive-testing plans that surfaced resiliency gaps before customer impact.
+  \item \textbf{Reliability:} Defined SLIs/SLOs and a strict production error-budget policy for subnet-router and DERP relay services sustaining 99.999\% availability — zero error-budget breaches since the SRE transition — aligning alerting and on-call response to measurable latency and availability targets.
+  \item \textbf{Security:} Hardened the platform identity and secrets tier — Vault (OAuth/JWT/OIDC auth methods), Workload Identity, and cert-manager/Venafi issuance — and built a policy-scoped Vault namespace/path decommission tool gated behind a director-approved change workflow.
+  \item \textbf{Strategy:} Shaped platform architecture around the ``80\% customer'' — shipping for the majority of the 7000+ developers the team directly supports first, then solving the remaining long-tail needs as capacity allows.
+  \item \textbf{Testing:} Built a reproducible, auditable validation and load-testing harness in Golang and GitHub Actions — reporting latency (p50/p95/p99), service-discovery time, error rate, deployment duration, and time-to-tailnet as deltas against a baseline — and executed destructive and load tests at 3x production scale (~2,000 services across four GCP regions) with node loss, region partition, and rolling pod recycling to validate xDS snapshot consistency and graceful-restart rollout strategies.
+\end{itemize}
+\end{description}
+
+\begin{description}
+\item\textbf{Staff Systems Engineer:} {The Home Depot} -- Atlanta, GA \hfill March 2024 -- April 2026 \\
 \textbf{Team:} Cloud Platform Engineering \\
 \textit{Platform Engineering position focused on both software development of platform APIs and platform management. Position includes a 24x7 on-call shift. Provide high-level customer support as the Hashicorp Vault platform subject matter expert. Support Google Cloud Infrastructure via terraform enterprise and sentinel policy-as-code.} \\
 \vspace{-6.5pt}
@@ -127,6 +141,8 @@ right=0.5in]{geometry}              % specify right page margin
   \item \textbf{Metrics:} Designed and implemented smoke testing infrastructure for Terraform Enterprise implementation. Increased observability of Terraform Enterprise platform and identified cause of systemic deployment issues affecting customers.
   \item \textbf{Reliability:} Defined SLO/SLI program for platform services leading to reduced P99 latency and increased availability.
   \item \textbf{Security:} Integrated policy-as-code (Sentinel/OPA) into Terraform pipelines to enforce guardrails and prevent insecure infrastructure changes.
+  \item \textbf{Security:} Hardened the DERP image supply chain — migrated container images to Chainguard, added Trivy scanning to build pipelines, and transitioned certificate issuance from Venafi on-prem to Venafi Cloud.
+  \item \textbf{Strategy:} Prioritized platform features around the ``80\% customer'' design philosophy — delivering for the majority of the 7000+ supported developers first and addressing the long tail as capacity allowed.
 \end{itemize}
 \end{description}
 
@@ -145,6 +161,7 @@ right=0.5in]{geometry}              % specify right page margin
   \item \textbf{Reliability:} Developed node smoke test application to provide real-time cluster status information in Golang.
   \item \textbf{Reliability:} Analyzed metrics usage and was able to reduce recurring cost by half.
   \item \textbf{Security:} Introduced IaC scanning into CI to detect misconfigurations earlier, reducing remediation time and preventing insecure deployments.
+  \item \textbf{Strategy:} Applied the ``80\% customer'' design philosophy to the enterprise Kubernetes platform — building for the majority of the internal developer base first and solving edge-case needs as capacity allowed.
 \end{itemize}
 \end{description}
 
@@ -157,7 +174,7 @@ right=0.5in]{geometry}              % specify right page margin
   \item \textbf{Application:} Worked to migrate 1000+ applications on VMware Tanzu from CFLINUXFS2 to CFLINUXFS3 over a 3-day period.
   \item \textbf{Documentation:} Created documentation to assist both team standard operating procedure and customers for VMware Tanzu.
   \item \textbf{Reliability:} Maintain supported and secure VMware Tanzu through multiple upgrades.
-  \item \textbf{Reliability:} Bring stability to the VMware Tanzu by integrating Min.io, an S3 data backend, significantly reducing customer impact during maintenance windows. 
+  \item \textbf{Reliability:} Bring stability to the VMware Tanzu by integrating Min.io, an S3 data backend, significantly reducing customer impact during maintenance windows.
 \end{itemize}
 \end{description}
 
@@ -166,7 +183,7 @@ right=0.5in]{geometry}              % specify right page margin
 \textit{Designed and implemented automated test tool framework to improve validation of software. Provided high level customer support as an interface between the customer and the development team. Designed and maintained secure lab network providing test framework for 100+ devices and 5000+ virtual devices. Provided manual analysis of reports to validate software stack.} \\
 \vspace{-6.5pt}
 \begin{itemize}
-  \item \textbf{Application:} Built, tested, documented and maintained software regression testing tool suite reducing testing cycle from months to weeks. 
+  \item \textbf{Application:} Built, tested, documented and maintained software regression testing tool suite reducing testing cycle from months to weeks.
   \item \textbf{Documentation:} Produce method of procedure maintenance guidelines, produce recommended security practices documentation, for customer integration of products.
   \item \textbf{Reliability:} Designed complex networking configuration for lab testing environment, including network monitoring of all traffic for analysis.
   \item \textbf{Reliability:} Maintain thousands of Linux container instances (LXC, docker) in datacenter.
