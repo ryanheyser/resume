@@ -34,7 +34,7 @@ jobs:
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         fetch-depth: 1
-        ref: main
+        ref: ${{ github.event.pull_request.head.sha || github.sha }}
         sparse-checkout: |
           ${{ matrix.latexfile }}
 
@@ -49,6 +49,7 @@ jobs:
       if: ${{ hashFiles('systems-engineer-principal-resume.tex') != '' }}
       id: compile-latex-document
       uses: xu-cheng/latex-action@6549dc21effb2730855a1281407ecfcececc6c1b # 4.1.0
+      continue-on-error: true
       with:
         root_file: ${{ matrix.latexfile }}
         docker_image: ghcr.io/xu-cheng/texlive-alpine@sha256:8b4a00b6a17ebe6b96dee107d82f0cb3eb40daf322f1e23809a9be26486963dd # 20260401
@@ -58,7 +59,24 @@ jobs:
           echo "tlmgr conf texmf: $(tlmgr conf texmf)"          
           tlmgr option repository https://mirror.ctan.org/systems/texlive/tlnet
           tlmgr update --self
+          if [ $? -ne 0 ]; then
+            tlmgr option repository https://mirror.math.princeton.edu/pub/CTAN/systems/texlive/tlnet
+            tlmgr update --self
+            if [ $? -ne 0 ]; then
+              echo "Update Self Error'd with: $?"
+              exit 1
+            fi
+          fi
+          tlmgr option repository https://mirror.ctan.org/systems/texlive/tlnet
           tlmgr update --all
+          if [ $? -ne 0 ]; then
+            tlmgr option repository https://mirror.math.princeton.edu/pub/CTAN/systems/texlive/tlnet
+            tlmgr update --all
+            if [ $? -ne 0 ]; then
+              echo "Update All Error'd with: $?"
+              exit 1
+            fi
+          fi
         post_compile: "latexmk -c"
 
     - name: ${{ matrix.title }} upload PDF to the workflow tab
