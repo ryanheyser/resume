@@ -65,18 +65,18 @@ right=0.5in]{geometry}              % specify right page margin
   \textbf{Control Plane \& Mesh:} Envoy, xDS, Istio, Linkerd, Tailscale\\
   \textbf{Observability:} OpenTelemetry, Prometheus, Grafana, kube-state-metrics\\
   \textbf{GitOps \& CI/CD:} Flux (HelmReleases, Kustomizations), ArgoCD, GitHub Actions, Jenkins\\
-  \textbf{Infrastructure as Code:} Terraform, Terraform Enterprise, Sentinel, Ansible\\
 }
 \end{flushleft}
 \begin{flushright}
 \parbox{\linewidth}{\raggedleft
+  \textbf{Infrastructure as Code:} Terraform, Terraform Enterprise, Sentinel, Ansible\\
   \textbf{Identity \& Secrets:} Vault, OAuth/JWT/OIDC, Workload Identity, cert-manager, Venafi\\
   \textbf{Cloud \& Networking:} Google Cloud (GKE, GCE, VPC, Cloud NAT, IAP), Azure\\
   \textbf{Databases:} AlloyDB, PostgreSQL, CloudSQL, BigQuery\\
   \textbf{Security:} Sentinel/OPA, Gatekeeper, Trivy, Wiz, Chainguard, IaC scanning\\
   \textbf{Programming Languages:} Golang, Python, Bash\\
   \textbf{AI \& Automation:} Gemini, MCP server\\
-  \textbf{Version Control:} Git (Github.com), SVN\\
+  \textbf{Version Control:} Git (GitHub.com), SVN\\
 }
 \end{flushright}
 \end{multicols}
@@ -86,7 +86,7 @@ right=0.5in]{geometry}              % specify right page margin
 \section*{Projects}
 \begin{description}
 \item\textbf{Homelab} \hfill \href{https://github.com/ryanheyser/homelab-ops}{github.com/ryanheyser/homelab-ops} | \href{https://github.com/ryanheyser/homelab-infrastructure}{github.com/ryanheyser/homelab-infrastructure} \\
-\item\textit{Project to build and maintain homelab through Devops and Infrastructure-as-Code.} \\
+\item\textit{Project to build and maintain homelab through DevOps and Infrastructure-as-Code.} \\
 \vspace{-6.5pt}
 \begin{itemize}
   \item Bootstrap Ubuntu virtual machine image via Cloud Init.
@@ -119,7 +119,7 @@ right=0.5in]{geometry}              % specify right page margin
   \item \textbf{Data:} Operated the platform's managed external data tier (AlloyDB/PostgreSQL) under shared 24x7 on-call — a deliberate, cost-conscious design serving \textasciitilde{}80\% of customers with a managed database connection rather than local storage — contributing to production-readiness review, credential hardening, and AlloyDB-to-BigQuery replication reliability.
   \item \textbf{FinOps:} Refactored Google Compute reservation logic for subnet routers and tuned BigQuery dataset billing, reducing recurring spend without degrading capacity or signal.
   \item \textbf{Kubernetes:} Drove lifecycle upgrades of 15+ GKE platform components across 50+ non-production and production clusters — Gatekeeper (OPA admission webhooks), OpenTelemetry and Vault Secrets operators, cert-manager with approver-policy, and kube-rbac-proxy — keeping CRDs, operators, admission control, and RBAC current and continuously scanned (Trivy/Wiz).
-  \item \textbf{Kubernetes:} Managed the Envoy/xDS and Appvia Wayfinder control plane and delivered platform components via Flux (HelmReleases and Kustomizations) through a controlled, auditable ``conveyer-belt'' release pipeline, validating routing consistency through rollouts and pod recycles.
+  \item \textbf{Kubernetes:} Managed the Envoy/xDS and Appvia Wayfinder control plane and delivered platform components via Flux (HelmReleases and Kustomizations) through a controlled, auditable ``conveyor-belt'' release pipeline, validating routing consistency through rollouts and pod recycles.
   \item \textbf{Networking:} Engineered Tailscale subnet-router and DERP relay networking across GCP VPCs (Cloud NAT, IAP tunnels, Workload Identity) and led destructive failover tests validating regional traffic shifting during incidents.
   \item \textbf{Observability:} Operated the observability stack (OpenTelemetry Collector/Operator, kube-state-metrics, Prometheus, Grafana) across 50+ non-production and production clusters — right-sized alerts at creation and remediated noisy alerts and stale metric descriptors on detection to keep signal high — and streamed audit logs to BigQuery for compliance and forensics.
   \item \textbf{Reliability:} Established the Reliability Engineering practice for the Tailscale platform through the REASSURE production-readiness journey — authored PRRs, defined SLIs/SLOs, and codified destructive-testing plans that surfaced resiliency gaps before customer impact.
@@ -133,14 +133,14 @@ right=0.5in]{geometry}              % specify right page margin
 \begin{description}
 \item\textbf{Staff Systems Engineer:} {The Home Depot} -- Atlanta, GA \hfill March 2024 -- April 2026 \\
 \textbf{Team:} Cloud Platform Engineering \\
-\textit{Platform Engineering position focused on both software development of platform APIs and platform management. Position includes a 24x7 on-call shift. Provide high-level customer support as the Hashicorp Vault platform subject matter expert. Support Google Cloud Infrastructure via terraform enterprise and sentinel policy-as-code.} \\
+\textit{Platform Engineering position focused on both software development of platform APIs and platform management. Position included a 24x7 on-call shift. Provided high-level customer support as the HashiCorp Vault platform subject matter expert. Supported Google Cloud infrastructure via Terraform Enterprise and Sentinel policy-as-code.} \\
 \vspace{-6.5pt}
 \begin{itemize}
-  \item \textbf{Application:} Implemented custom DERP servers for cloud-wide Tailscale tailnet communication. Maintain 99.999\% uptime.
-  \item \textbf{Application:} Developed Github Actions to automate building of operating system and container images.
+  \item \textbf{Application:} Implemented custom DERP servers for cloud-wide Tailscale tailnet communication. Maintained 99.999\% uptime.
+  \item \textbf{Application:} Developed GitHub Actions to automate building of operating system and container images.
   \item \textbf{Deliverability:} Leveraged AI tools (Gemini, MCP server) to automate release notes, test selection, and documentation generation — improving release deliverability and maintaining consistently high deployment success rates.
   \item \textbf{Development:} Built Terraform providers, a node exporter, and cluster smoke-test tooling in Golang to increase automation, observability, and platform reliability.
-  \item \textbf{Documentation:} Designed and implemented standardized documentation templating engine via Confluence. Increased documentation creation by the team by over 1000\% the previous two quarters.
+  \item \textbf{Documentation:} Designed and implemented a standardized documentation templating engine in Confluence, increasing team documentation output more than 10x over two quarters.
   \item \textbf{FinOps:} Led monitoring and metrics cost-optimization that reduced recurring observability spend while preserving signal quality.
   \item \textbf{Incident Management:} Established incident response playbooks, on-call rotation, and blameless postmortems.
   \item \textbf{Leadership:} Owned platform roadmap, prioritized platform investments, and aligned cross-functional stakeholders; led hiring, mentorship, and onboarding programs to accelerate new-hire productivity and retention.
@@ -155,12 +155,12 @@ right=0.5in]{geometry}              % specify right page margin
 \begin{description}
 \item\textbf{Staff Systems Engineer:} {The Home Depot} -- Atlanta, GA \hfill May 2021 -- March 2024 \\
 \textbf{Team:} Developer Operations and Platform Engineering \\
-\textit{Platform Engineering position focused on both software development of platform APIs and platform management. Position includes a 24x7 on-call shift. Designed and implemented Kubernetes in the datacenter. Provide high-level customer support as the Kubernetes platform subject matter expert. Provide L4 support for the prior application platform, VMware Tanzu.} \\
+\textit{Platform Engineering position focused on both software development of platform APIs and platform management. Position included a 24x7 on-call shift. Designed and implemented Kubernetes in the datacenter. Provided high-level customer support as the Kubernetes platform subject matter expert. Provided L4 support for the prior application platform, VMware Tanzu.} \\
 \vspace{-6.5pt}
 \begin{itemize}
-  \item \textbf{Application:} Developed a terraform process to create Kubernetes clusters. Process improved Kubernetes customer cluster onboarding down from 2 business weeks to 15 minutes.
-  \item \textbf{Application:} Developed terraform providers and APIs to bridge Rancher Kubernetes and Terraform using Golang.
-  \item \textbf{Application:} Developed Github Actions to automate building of operating system and container images.
+  \item \textbf{Application:} Developed a Terraform process to create Kubernetes clusters. Process improved Kubernetes customer cluster onboarding down from 2 business weeks to 15 minutes.
+  \item \textbf{Application:} Developed Terraform providers and APIs to bridge Rancher Kubernetes and Terraform using Golang.
+  \item \textbf{Application:} Developed GitHub Actions to automate building of operating system and container images.
   \item \textbf{Leadership:} Designed and ran team mentorship and people-development programs, and maintained an open-door 1:1 practice to improve shared knowledge and ramp.
   \item \textbf{Metrics:} Designed and implemented metrics and logging infrastructure for Kubernetes to egress metrics and logs from datacenter to Google Cloud.
   \item \textbf{Reliability:} Developed node exporter providing additional metrics of Kubernetes node information in Prometheus format in Golang.
@@ -174,13 +174,13 @@ right=0.5in]{geometry}              % specify right page margin
 \begin{description}
 \item\textbf{Senior Systems Engineer:} {The Home Depot} -- Atlanta, GA \hfill October 2019 -- May 2021 \\
 \textbf{Team:} Developer Operations and Platform Engineering \\
-\textit{Systems Engineering position focused on both platform management. Position includes a 24x7 on-call shift. Provide high-level customer support. Develop standard template for documentation to improve developer experience with increased ability to document team and external documentation.} \\
+\textit{Systems Engineering position focused on both platform management. Position included a 24x7 on-call shift. Provided high-level customer support. Developed standard template for documentation to improve developer experience with increased ability to document team and external documentation.} \\
 \vspace{-6.5pt}
 \begin{itemize}
   \item \textbf{Application:} Worked to migrate 1000+ applications on VMware Tanzu from CFLINUXFS2 to CFLINUXFS3 over a 3-day period.
   \item \textbf{Documentation:} Created documentation to assist both team standard operating procedure and customers for VMware Tanzu.
-  \item \textbf{Reliability:} Maintain supported and secure VMware Tanzu through multiple upgrades.
-  \item \textbf{Reliability:} Bring stability to the VMware Tanzu by integrating Min.io, an S3 data backend, significantly reducing customer impact during maintenance windows.
+  \item \textbf{Reliability:} Maintained supported and secure VMware Tanzu through multiple upgrades.
+  \item \textbf{Reliability:} Brought stability to VMware Tanzu by integrating MinIO, an S3 data backend, significantly reducing customer impact during maintenance windows.
 \end{itemize}
 \end{description}
 
@@ -190,10 +190,10 @@ right=0.5in]{geometry}              % specify right page margin
 \vspace{-6.5pt}
 \begin{itemize}
   \item \textbf{Application:} Built, tested, documented and maintained software regression testing tool suite reducing testing cycle from months to weeks.
-  \item \textbf{Documentation:} Produce method of procedure maintenance guidelines, produce recommended security practices documentation, for customer integration of products.
+  \item \textbf{Documentation:} Produced method of procedure maintenance guidelines and recommended security practices documentation for customer integration of products.
   \item \textbf{Reliability:} Designed complex networking configuration for lab testing environment, including network monitoring of all traffic for analysis.
-  \item \textbf{Reliability:} Maintain thousands of Linux container instances (LXC, docker) in datacenter.
-  \item \textbf{Reliability:} Maintain hundreds of virtual machines (KVM/QEMU, VirtualBox, VMware).
+  \item \textbf{Reliability:} Maintained thousands of Linux container instances (LXC, Docker) in datacenter.
+  \item \textbf{Reliability:} Maintained hundreds of virtual machines (KVM/QEMU, VirtualBox, VMware).
 \end{itemize}
 \end{description}
 
