@@ -50,7 +50,7 @@ right=0.5in]{geometry}              % specify right page margin
 % profile section
 \section*{Profile}
 \begin{description}
-\item\textbf{Distributed systems and platform engineer with 10+ years architecting, building, and operating highly available, fault-tolerant systems across multi-region cloud infrastructure (GKE, Kubernetes, GCP, Terraform).} Builds control-plane, networking, and data services in Go — applying concurrency, profiling, and tail-latency tuning — and owns reliability quantitatively through SLOs, error budgets, and production-readiness reviews. Sets technical direction and drives architectural decisions across cross-functional platform, networking, and security teams; participates in a 24x7 on-call rotation and leads incident reviews for the 7000+ developers the platform directly supports. Prioritizes platform investment around the majority use case — shipping for the ``80\% customer'' first and solving the long tail as capacity allows. Depth across Kubernetes internals and control-plane management, GitOps delivery, DevSecOps (policy-as-code, secrets management, IaC scanning), and FinOps. \\
+\item\textbf{Distributed systems and platform engineer with 10+ years architecting, building, and operating highly available, fault-tolerant systems across multi-region cloud infrastructure (GKE, Kubernetes, GCP, Terraform).} Builds control-plane, networking, and data services in Go — applying concurrency, profiling, and tail-latency tuning — and owns reliability through SLOs, error budgets, and production-readiness reviews. Sets technical direction and drives architectural decisions across platform, networking, and security teams; runs a 24x7 on-call rotation and leads incident reviews for the 7000+ developers the platform supports. Prioritizes investment around the ``80\% customer'' — shipping for the majority first, solving the long tail as capacity allows. Depth across Kubernetes internals, GitOps delivery, DevSecOps (policy-as-code, secrets management, IaC scanning), and FinOps. \\
 \end{description}
 
 \vspace{-18.5pt}
@@ -60,7 +60,7 @@ right=0.5in]{geometry}              % specify right page margin
 \begin{multicols}{2}
 \begin{flushleft}
 \parbox{\linewidth}{\raggedright
-  \textbf{Distributed Systems:} High availability, fault tolerance, multi-region failover, eventual consistency, reconciliation loops, idempotency, retries \& backoff, graceful degradation, capacity \& saturation analysis\\
+  \textbf{Distributed Systems:} High availability, fault tolerance, multi-region failover, eventual consistency, reconciliation loops, idempotency, retries \& backoff, capacity \& saturation analysis\\
   \textbf{APIs \& Messaging:} gRPC/protobuf, GraphQL, REST, Google Pub/Sub, Redis/Memcached\\
   \textbf{Reliability:} SLO/SLI, error budgets, production-readiness review (PRR), incident response, chaos/destructive \& load testing, PagerDuty\\
   \textbf{Kubernetes:} CRDs, Operators, Admission Webhooks (Gatekeeper/OPA), RBAC, GKE, Wayfinder, Docker, VMware Tanzu\\
@@ -76,7 +76,7 @@ right=0.5in]{geometry}              % specify right page margin
   \textbf{Cloud \& Networking:} Google Cloud (GKE, GCE, VPC, Cloud NAT, IAP), Azure\\
   \textbf{Databases \& Caching:} AlloyDB, PostgreSQL, CloudSQL, BigQuery, Redis/Memcached\\
   \textbf{Security:} Sentinel/OPA, Gatekeeper, Trivy, Wiz, Chainguard, IaC scanning\\
-  \textbf{Programming Languages:} Golang, Python, Bash\\
+  \textbf{Programming Languages:} Golang (concurrency: goroutines, channels, sync/errgroup, context cancellation; pprof and race-detector profiling), Python, Bash\\
   \textbf{AI \& Automation:} AI-assisted development (Gemini, Claude Code), MCP servers, agentic workflow automation\\
   \textbf{Version Control:} Git (GitHub.com), SVN\\
 }
@@ -117,21 +117,16 @@ right=0.5in]{geometry}              % specify right page margin
 \textit{Site Reliability Engineering position owning the reliability of The Home Depot's GKE-based application-delivery platform. Position includes a 24x7 on-call shift. Drive production-readiness reviews (PRR), SLO/error-budget programs, and resiliency testing across the platform; serve as reliability subject-matter expert for platform customers.} \\
 \vspace{-6.5pt}
 \begin{itemize}
-  \item \textbf{APIs:} Integrated Golang platform services with gRPC (protobuf), GraphQL, and Google Pub/Sub interfaces — applying idempotent message handling, retry with backoff, and Redis/Memcached caching to bound tail latency and shield downstream services from load spikes.
-  \item \textbf{Architecture:} Set technical direction for the platform's control-plane and multi-region service-discovery architecture — authored design documents and led architecture reviews that aligned platform, networking, and security stakeholders on explicit trade-offs between consistency, tail latency, and blast radius.
-  \item \textbf{Customer Communication:} Served as reliability SME for platform customers — running REASSURE PRR engagements and extending the "Gravity" tool to detect and proactively notify customers of outdated Terraform provider versions.
-  \item \textbf{Data:} Operated the platform's managed external data tier (AlloyDB/PostgreSQL) under shared 24x7 on-call — a deliberate, cost-conscious design serving \textasciitilde{}80\% of customers with a managed database connection rather than local storage — contributing to production-readiness review, credential hardening, and change-data-capture replication from AlloyDB to BigQuery (replication-lag SLIs and reliability).
-  \item \textbf{Distributed Systems:} Managed a multi-region Envoy/xDS control plane and Appvia Wayfinder — distributing versioned configuration snapshots over gRPC streams to proxy clients across four GCP regions — and delivered platform components via Flux (HelmReleases and Kustomizations) through a controlled, auditable ``conveyor-belt'' release pipeline, validating snapshot convergence and routing consistency through rollouts and pod recycles.
-  \item \textbf{FinOps:} Refactored Google Compute reservation logic for subnet routers and tuned BigQuery dataset billing, reducing recurring spend without degrading capacity or signal.
-  \item \textbf{Incident Management:} Led incident reviews and blameless postmortems for platform-impacting events on a shared 24x7 rotation, converting findings into tracked reliability work and runbook automation.
-  \item \textbf{Kubernetes:} Drove lifecycle upgrades of 15+ GKE platform components across 50+ non-production and production clusters — Gatekeeper (OPA admission webhooks), OpenTelemetry and Vault Secrets operators, cert-manager with approver-policy, and kube-rbac-proxy — keeping CRDs, operators, admission control, and RBAC current and continuously scanned (Trivy/Wiz).
-  \item \textbf{Networking:} Engineered Tailscale subnet-router and DERP relay networking across GCP VPCs (Cloud NAT, IAP tunnels, Workload Identity) and led destructive failover tests validating regional traffic shifting during incidents.
-  \item \textbf{Observability:} Operated the observability stack (OpenTelemetry Collector/Operator, kube-state-metrics, Prometheus, Grafana) across 50+ non-production and production clusters — right-sized alerts at creation and remediated noisy alerts and stale metric descriptors on detection to keep signal high — and streamed audit logs to BigQuery for compliance and forensics.
-  \item \textbf{Reliability:} Established the Reliability Engineering practice for the Tailscale platform through the REASSURE production-readiness journey — authored PRRs, defined SLIs/SLOs, and codified destructive-testing plans that surfaced resiliency gaps before customer impact.
-  \item \textbf{Reliability:} Defined SLIs/SLOs and a strict production error-budget policy for subnet-router and DERP relay services sustaining 99.999\% availability — zero error-budget breaches since the SRE transition — aligning alerting and on-call response to measurable latency and availability targets.
-  \item \textbf{Security:} Hardened the platform identity and secrets tier — Vault (OAuth/JWT/OIDC auth methods), Workload Identity, and cert-manager/Venafi issuance — and built a policy-scoped Vault namespace/path decommission tool gated behind a director-approved change workflow.
-  \item \textbf{Strategy:} Shaped platform architecture around the ``80\% customer'' — shipping for the majority of the 7000+ developers the team directly supports first, then solving the remaining long-tail needs as capacity allows.
-  \item \textbf{Testing:} Built a reproducible, auditable validation and load-testing harness in Golang (concurrent worker pools, context cancellation, pprof profiling) and GitHub Actions — reporting latency (p50/p95/p99), service-discovery time, error rate, deployment duration, and time-to-tailnet as deltas against a baseline — and executed destructive and load tests at 3x production scale (\textasciitilde{}2,000 services across four GCP regions) with node loss, region partition, and rolling pod recycling to validate xDS snapshot consistency and graceful-restart rollout strategies.
+  \item \textbf{APIs:} Integrated Golang services with gRPC (protobuf), GraphQL, and Google Pub/Sub — applying idempotent message handling, retry with backoff, and Redis/Memcached caching to bound tail latency.
+  \item \textbf{Architecture:} Set technical direction for control-plane and multi-region service-discovery architecture — authored design documents and led reviews aligning platform, networking, and security teams on consistency, latency, and blast-radius trade-offs.
+  \item \textbf{Data:} Operated the managed external data tier (AlloyDB/PostgreSQL) under shared 24x7 on-call — serving \textasciitilde{}80\% of customers a managed connection rather than local storage — covering production-readiness review, credential hardening, and change-data-capture replication to BigQuery with replication-lag SLIs.
+  \item \textbf{Distributed Systems:} Managed a multi-region Envoy/xDS control plane and Appvia Wayfinder, distributing versioned config snapshots over gRPC streams to proxy clients across four GCP regions — and delivered components via Flux (HelmReleases, Kustomizations) through an auditable ``conveyor-belt'' pipeline, validating snapshot convergence through rollouts and pod recycles.
+  \item \textbf{Incident Management:} Led incident reviews and blameless postmortems on a shared 24x7 rotation, converting findings into tracked reliability work and runbook automation.
+  \item \textbf{Kubernetes:} Drove lifecycle upgrades of 15+ GKE platform components across 50+ clusters — Gatekeeper (OPA admission webhooks), OpenTelemetry and Vault Secrets operators, cert-manager with approver-policy, kube-rbac-proxy — keeping CRDs, operators, admission control, and RBAC current and scanned (Trivy/Wiz).
+  \item \textbf{Observability:} Operated the observability stack (OpenTelemetry Collector/Operator, kube-state-metrics, Prometheus, Grafana) across 50+ clusters — right-sized alerts at creation, remediated noisy alerts and stale metric descriptors — and streamed audit logs to BigQuery for compliance and forensics.
+  \item \textbf{Reliability:} Defined SLIs/SLOs and a production error-budget policy for subnet-router and DERP relay services sustaining 99.999\% availability — zero error-budget breaches since the SRE transition — aligning alerting and on-call response to latency and availability targets.
+  \item \textbf{Security:} Hardened the identity and secrets tier — Vault (OAuth/JWT/OIDC), Workload Identity, cert-manager/Venafi issuance — and built a policy-scoped Vault namespace/path decommission tool gated behind a director-approved change workflow.
+  \item \textbf{Testing:} Built a validation and load-testing harness in Golang (concurrent worker pools, context cancellation, pprof profiling) and GitHub Actions — reporting latency (p50/p95/p99), service-discovery time, error rate, and deployment duration as deltas against a baseline — and ran destructive tests at 3x production scale (\textasciitilde{}2,000 services, four GCP regions) with node loss, region partition, and rolling pod recycling to validate xDS snapshot consistency and graceful-restart rollouts.
 \end{itemize}
 \end{description}
 
@@ -141,19 +136,14 @@ right=0.5in]{geometry}              % specify right page margin
 \textit{Platform Engineering position focused on both software development of platform APIs and platform management. Position included a 24x7 on-call shift. Provided high-level customer support as the HashiCorp Vault platform subject matter expert. Supported Google Cloud infrastructure via Terraform Enterprise and Sentinel policy-as-code.} \\
 \vspace{-6.5pt}
 \begin{itemize}
-  \item \textbf{APIs:} Built Golang platform APIs integrating GraphQL and Google Pub/Sub interfaces with Redis/Memcached caching — using asynchronous, idempotent event handling to decouple platform services and absorb bursty request load.
-  \item \textbf{Deliverability:} Evaluated and adopted AI-assisted development tooling (Gemini, purpose-built MCP servers) to automate release notes, test selection, and documentation generation — accelerating the software development lifecycle and maintaining consistently high deployment success rates.
-  \item \textbf{Development:} Built Terraform providers implementing HashiCorp's gRPC/protobuf plugin protocol, a Prometheus node exporter, and concurrent cluster smoke-test tooling in Golang — packaged as reusable internal libraries consumed by other platform teams to increase automation, observability, and reliability.
-  \item \textbf{Distributed Systems:} Implemented custom DERP relay servers in Golang providing NAT traversal and encrypted connection relaying for a cloud-wide Tailscale mesh, sustaining 99.999\% availability across GCP regions.
-  \item \textbf{Documentation:} Designed and implemented a standardized documentation templating engine in Confluence, increasing team documentation output more than 10x over two quarters.
-  \item \textbf{FinOps:} Led monitoring and metrics cost-optimization that reduced recurring observability spend while preserving signal quality.
-  \item \textbf{Incident Management:} Established incident response playbooks, on-call rotation, and blameless postmortems.
-  \item \textbf{Leadership:} Owned platform roadmap, prioritized platform investments, and aligned cross-functional stakeholders; led hiring, mentorship, and onboarding programs to accelerate new-hire productivity and retention.
-  \item \textbf{Metrics:} Designed and implemented smoke testing infrastructure for Terraform Enterprise implementation. Increased observability of Terraform Enterprise platform and identified cause of systemic deployment issues affecting customers.
-  \item \textbf{Reliability:} Defined SLO/SLI program for platform services leading to reduced P99 latency and increased availability.
+  \item \textbf{APIs:} Built Golang platform APIs over GraphQL and Google Pub/Sub with Redis/Memcached caching, using asynchronous idempotent event handling to decouple services and absorb bursty load.
+  \item \textbf{Deliverability:} Evaluated and adopted AI-assisted development tooling (Gemini, purpose-built MCP servers) to automate release notes, test selection, and documentation generation — accelerating the development lifecycle and sustaining high deployment success rates.
+  \item \textbf{Development:} Built Terraform providers on HashiCorp's gRPC/protobuf plugin protocol, a Prometheus node exporter, and concurrent smoke-test tooling in Golang — packaged as reusable internal libraries consumed by other platform teams.
+  \item \textbf{Distributed Systems:} Implemented custom DERP relay servers in Golang providing NAT traversal and encrypted relaying for a cloud-wide Tailscale mesh, sustaining 99.999\% availability.
+  \item \textbf{Leadership:} Owned the platform roadmap, prioritized investments, and aligned cross-functional stakeholders; led hiring, mentorship, and onboarding programs.
+  \item \textbf{Reliability:} Defined the SLO/SLI program for platform services, reducing P99 latency and increasing availability.
   \item \textbf{Security:} Integrated policy-as-code (Sentinel/OPA) into Terraform pipelines to enforce guardrails and prevent insecure infrastructure changes.
   \item \textbf{Security:} Hardened the DERP image supply chain — migrated container images to Chainguard, added Trivy scanning to build pipelines, and transitioned certificate issuance from Venafi on-prem to Venafi Cloud.
-  \item \textbf{Strategy:} Prioritized platform features around the ``80\% customer'' design philosophy — delivering for the majority of the 7000+ supported developers first and addressing the long tail as capacity allowed.
 \end{itemize}
 \end{description}
 
@@ -163,16 +153,13 @@ right=0.5in]{geometry}              % specify right page margin
 \textit{Platform Engineering position focused on both software development of platform APIs and platform management. Position included a 24x7 on-call shift. Designed and implemented Kubernetes in the datacenter. Provided high-level customer support as the Kubernetes platform subject matter expert. Provided L4 support for the prior application platform, VMware Tanzu.} \\
 \vspace{-6.5pt}
 \begin{itemize}
-  \item \textbf{Application:} Developed a Terraform process to create Kubernetes clusters. Process improved Kubernetes customer cluster onboarding down from 2 business weeks to 15 minutes.
-  \item \textbf{Application:} Developed Terraform providers and APIs to bridge Rancher Kubernetes and Terraform using Golang, implementing the gRPC/protobuf plugin interface against the Rancher control-plane API.
-  \item \textbf{Application:} Developed GitHub Actions to automate building of operating system and container images.
-  \item \textbf{Leadership:} Designed and ran team mentorship and people-development programs, and maintained an open-door 1:1 practice to improve shared knowledge and ramp.
-  \item \textbf{Metrics:} Designed and implemented metrics and logging infrastructure for Kubernetes to egress metrics and logs from datacenter to Google Cloud.
+  \item \textbf{Application:} Developed a Terraform process to create Kubernetes clusters, cutting customer onboarding from 2 business weeks to 15 minutes.
+  \item \textbf{Application:} Developed Terraform providers bridging Rancher Kubernetes and Terraform in Golang, implementing the gRPC/protobuf plugin interface against the Rancher control-plane API.
+  \item \textbf{Leadership:} Ran team mentorship and people-development programs and an open-door 1:1 practice to improve shared knowledge and ramp.
+  \item \textbf{Metrics:} Built metrics and logging infrastructure to egress Kubernetes metrics and logs from datacenter to Google Cloud.
   \item \textbf{Reliability:} Developed a concurrent node exporter in Golang exposing additional Kubernetes node metrics in Prometheus format.
-  \item \textbf{Reliability:} Developed node smoke test application to provide real-time cluster status information in Golang.
-  \item \textbf{Reliability:} Analyzed metrics usage and was able to reduce recurring cost by half.
-  \item \textbf{Security:} Introduced IaC scanning into CI to detect misconfigurations earlier, reducing remediation time and preventing insecure deployments.
-  \item \textbf{Strategy:} Applied the ``80\% customer'' design philosophy to the enterprise Kubernetes platform — building for the majority of the internal developer base first and solving edge-case needs as capacity allowed.
+  \item \textbf{Reliability:} Developed a node smoke-test application in Golang providing real-time cluster status.
+  \item \textbf{Security:} Introduced IaC scanning into CI to catch misconfigurations earlier, reducing remediation time.
 \end{itemize}
 \end{description}
 
@@ -182,34 +169,18 @@ right=0.5in]{geometry}              % specify right page margin
 \textit{Systems Engineering position focused on both platform management. Position included a 24x7 on-call shift. Provided high-level customer support. Developed standard template for documentation to improve developer experience with increased ability to document team and external documentation.} \\
 \vspace{-6.5pt}
 \begin{itemize}
-  \item \textbf{Application:} Worked to migrate 1000+ applications on VMware Tanzu from CFLINUXFS2 to CFLINUXFS3 over a 3-day period.
-  \item \textbf{Documentation:} Created documentation to assist both team standard operating procedure and customers for VMware Tanzu.
-  \item \textbf{Reliability:} Maintained supported and secure VMware Tanzu through multiple upgrades.
-  \item \textbf{Reliability:} Brought stability to VMware Tanzu by integrating MinIO, an S3 data backend, significantly reducing customer impact during maintenance windows.
+  \item \textbf{Application:} Migrated 1000+ applications on VMware Tanzu from CFLINUXFS2 to CFLINUXFS3 over three days.
+  \item \textbf{Reliability:} Stabilized VMware Tanzu by integrating MinIO (S3 data backend), reducing customer impact during maintenance windows.
 \end{itemize}
 \end{description}
 
 \begin{description}
 \item\textbf{Verification Engineer:} {Telchemy} -- Duluth, GA \hfill April 2015 -- October 2019 \\
-\textit{Designed and implemented automated test tool framework to improve validation of software. Provided high level customer support as an interface between the customer and the development team. Designed and maintained secure lab network providing test framework for 100+ devices and 5000+ virtual devices. Provided manual analysis of reports to validate software stack.} \\
+\textit{Automated software validation and maintained the secure lab network and device fleet used to qualify the product stack.} \\
 \vspace{-6.5pt}
 \begin{itemize}
-  \item \textbf{Application:} Built, tested, documented and maintained software regression testing tool suite reducing testing cycle from months to weeks.
-  \item \textbf{Documentation:} Produced method of procedure maintenance guidelines and recommended security practices documentation for customer integration of products.
-  \item \textbf{Reliability:} Designed complex networking configuration for lab testing environment, including network monitoring of all traffic for analysis.
-  \item \textbf{Reliability:} Maintained thousands of Linux container instances (LXC, Docker) in datacenter.
-  \item \textbf{Reliability:} Maintained hundreds of virtual machines (KVM/QEMU, VirtualBox, VMware).
-\end{itemize}
-\end{description}
-
-\begin{description}
-\item\textbf{Airman First Class:} {United States Air Force} -- Boca Raton, FL, Montgomery, AL \hfill October 2012 -- January 2014 \\
-\textit{Enrolled in the Technical Degree Sponsorship Program with the US Air Force as an Airman First Class to complete required service.} \\
-\vspace{-6.5pt}
-\begin{itemize}
-  \item \textbf{Application:} Built, tested, and/or modified prototypes using workflow models or theoretical models constructed with computer simulation.
-  \item \textbf{Application:} Prepared detailed workflow charts and diagrams that described input, output, and logical operation and converted them into a series of instructions coded in a computer language.
-  \item \textbf{Documentation:} Compiled and wrote documentation of program development and subsequent revisions, inserting comments in the coded instructions so others could understand the program.
+  \item \textbf{Application:} Built and maintained a software regression-testing suite, cutting test cycles from months to weeks.
+  \item \textbf{Reliability:} Designed the lab test network and maintained 100+ physical and 5000+ virtual devices — thousands of Linux containers (LXC, Docker) and hundreds of VMs (KVM/QEMU, VirtualBox, VMware).
 \end{itemize}
 \end{description}
 
