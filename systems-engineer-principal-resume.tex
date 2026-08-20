@@ -24,7 +24,7 @@ right=0.5in]{geometry}              % specify right page margin
 \hypersetup{
   pdfauthor={Ryan Heyser},
   pdftitle={Ryan Heyser — Resume},
-  pdfkeywords={SRE, Site Reliability Engineering, SLO, SLI, error budget, production readiness review, PRR, incident response, on-call, runbooks, chaos engineering, destructive testing, load testing, Kubernetes, GKE, CRDs, operators, admission webhooks, Gatekeeper, OPA, RBAC, control plane, Wayfinder, Envoy, xDS, GitOps, Flux, HelmRelease, Kustomization, ArgoCD, OpenTelemetry, Prometheus, Grafana, kube-state-metrics, observability, tracing, Vault, OAuth, JWT, OIDC, Workload Identity, cert-manager, Venafi, secrets management, AlloyDB, PostgreSQL, CloudSQL, BigQuery, VPC, Cloud NAT, IAP, IAM, Tailscale, FinOps, Golang, Python, Terraform, Terraform Enterprise, Sentinel, Trivy, Wiz, Chainguard, GCP}
+  pdfkeywords={SRE, Site Reliability Engineering, SLO, SLI, error budget, production readiness review, PRR, incident response, on-call, runbooks, chaos engineering, destructive testing, load testing, Kubernetes, GKE, CRDs, operators, admission webhooks, Gatekeeper, OPA, RBAC, control plane, Wayfinder, Envoy, xDS, GitOps, Flux, HelmRelease, Kustomization, ArgoCD, OpenTelemetry, Prometheus, Grafana, kube-state-metrics, observability, tracing, Vault, OAuth, JWT, OIDC, Workload Identity, cert-manager, Venafi, secrets management, AlloyDB, PostgreSQL, CloudSQL, BigQuery, VPC, Cloud NAT, IAP, IAM, Tailscale, FinOps, Golang, Python, Terraform, Terraform Enterprise, Sentinel, Trivy, Wiz, Chainguard, GCP, distributed systems, high availability, fault tolerance, multi-region, failover, eventual consistency, reconciliation loop, idempotency, retries, backoff, backpressure, graceful degradation, tail latency, p99, performance tuning, concurrency, goroutines, pprof, gRPC, protobuf, GraphQL, REST, API design, Pub/Sub, event-driven, message queue, Redis, Memcached, caching, change data capture, technical strategy, architecture review, design document, incident review, blameless postmortem, mentorship, AI-assisted development, MCP, Claude Code}
 }
 
 % format section headings: bolding, size, white space above and below
@@ -50,7 +50,7 @@ right=0.5in]{geometry}              % specify right page margin
 % profile section
 \section*{Profile}
 \begin{description}
-\item\textbf{Site Reliability Engineer and platform leader with 10+ years building, operating, and ensuring the reliability of scalable cloud platforms (GKE, Kubernetes, GCP, Terraform).} Owns reliability quantitatively through SLOs, error budgets, and production-readiness reviews; writes automation and observability tooling in Go and Python that replaces manual runbooks; and translates reliability trade-offs into business outcomes for the 7000+ developers the platform directly supports. Prioritizes platform investment around the majority use case — shipping for the ``80\% customer'' first and solving the long tail as capacity allows. Depth across Kubernetes internals and control-plane management, GitOps delivery, DevSecOps (policy-as-code, secrets management, IaC scanning), and FinOps. \\
+\item\textbf{Distributed systems and platform engineer with 10+ years architecting, building, and operating highly available, fault-tolerant systems across multi-region cloud infrastructure (GKE, Kubernetes, GCP, Terraform).} Builds control-plane, networking, and data services in Go — applying concurrency, profiling, and tail-latency tuning — and owns reliability quantitatively through SLOs, error budgets, and production-readiness reviews. Sets technical direction and drives architectural decisions across cross-functional platform, networking, and security teams; participates in a 24x7 on-call rotation and leads incident reviews for the 7000+ developers the platform directly supports. Prioritizes platform investment around the majority use case — shipping for the ``80\% customer'' first and solving the long tail as capacity allows. Depth across Kubernetes internals and control-plane management, GitOps delivery, DevSecOps (policy-as-code, secrets management, IaC scanning), and FinOps. \\
 \end{description}
 
 \vspace{-18.5pt}
@@ -60,6 +60,8 @@ right=0.5in]{geometry}              % specify right page margin
 \begin{multicols}{2}
 \begin{flushleft}
 \parbox{\linewidth}{\raggedright
+  \textbf{Distributed Systems:} High availability, fault tolerance, multi-region failover, eventual consistency, reconciliation loops, idempotency, retries \& backoff, graceful degradation, capacity \& saturation analysis\\
+  \textbf{APIs \& Messaging:} gRPC/protobuf, GraphQL, REST, Google Pub/Sub, Redis/Memcached\\
   \textbf{Reliability:} SLO/SLI, error budgets, production-readiness review (PRR), incident response, chaos/destructive \& load testing, PagerDuty\\
   \textbf{Kubernetes:} CRDs, Operators, Admission Webhooks (Gatekeeper/OPA), RBAC, GKE, Wayfinder, Docker, VMware Tanzu\\
   \textbf{Control Plane \& Mesh:} Envoy, xDS, Istio, Linkerd, Tailscale\\
@@ -72,10 +74,10 @@ right=0.5in]{geometry}              % specify right page margin
   \textbf{Infrastructure as Code:} Terraform, Terraform Enterprise, Sentinel, Ansible\\
   \textbf{Identity \& Secrets:} Vault, OAuth/JWT/OIDC, Workload Identity, cert-manager, Venafi\\
   \textbf{Cloud \& Networking:} Google Cloud (GKE, GCE, VPC, Cloud NAT, IAP), Azure\\
-  \textbf{Databases:} AlloyDB, PostgreSQL, CloudSQL, BigQuery\\
+  \textbf{Databases \& Caching:} AlloyDB, PostgreSQL, CloudSQL, BigQuery, Redis/Memcached\\
   \textbf{Security:} Sentinel/OPA, Gatekeeper, Trivy, Wiz, Chainguard, IaC scanning\\
   \textbf{Programming Languages:} Golang, Python, Bash\\
-  \textbf{AI \& Automation:} Gemini, MCP server\\
+  \textbf{AI \& Automation:} AI-assisted development (Gemini, Claude Code), MCP servers, agentic workflow automation\\
   \textbf{Version Control:} Git (GitHub.com), SVN\\
 }
 \end{flushright}
@@ -115,18 +117,21 @@ right=0.5in]{geometry}              % specify right page margin
 \textit{Site Reliability Engineering position owning the reliability of The Home Depot's GKE-based application-delivery platform. Position includes a 24x7 on-call shift. Drive production-readiness reviews (PRR), SLO/error-budget programs, and resiliency testing across the platform; serve as reliability subject-matter expert for platform customers.} \\
 \vspace{-6.5pt}
 \begin{itemize}
+  \item \textbf{APIs:} Integrated Golang platform services with gRPC (protobuf), GraphQL, and Google Pub/Sub interfaces — applying idempotent message handling, retry with backoff, and Redis/Memcached caching to bound tail latency and shield downstream services from load spikes.
+  \item \textbf{Architecture:} Set technical direction for the platform's control-plane and multi-region service-discovery architecture — authored design documents and led architecture reviews that aligned platform, networking, and security stakeholders on explicit trade-offs between consistency, tail latency, and blast radius.
   \item \textbf{Customer Communication:} Served as reliability SME for platform customers — running REASSURE PRR engagements and extending the "Gravity" tool to detect and proactively notify customers of outdated Terraform provider versions.
-  \item \textbf{Data:} Operated the platform's managed external data tier (AlloyDB/PostgreSQL) under shared 24x7 on-call — a deliberate, cost-conscious design serving \textasciitilde{}80\% of customers with a managed database connection rather than local storage — contributing to production-readiness review, credential hardening, and AlloyDB-to-BigQuery replication reliability.
+  \item \textbf{Data:} Operated the platform's managed external data tier (AlloyDB/PostgreSQL) under shared 24x7 on-call — a deliberate, cost-conscious design serving \textasciitilde{}80\% of customers with a managed database connection rather than local storage — contributing to production-readiness review, credential hardening, and change-data-capture replication from AlloyDB to BigQuery (replication-lag SLIs and reliability).
+  \item \textbf{Distributed Systems:} Managed a multi-region Envoy/xDS control plane and Appvia Wayfinder — distributing versioned configuration snapshots over gRPC streams to proxy clients across four GCP regions — and delivered platform components via Flux (HelmReleases and Kustomizations) through a controlled, auditable ``conveyor-belt'' release pipeline, validating snapshot convergence and routing consistency through rollouts and pod recycles.
   \item \textbf{FinOps:} Refactored Google Compute reservation logic for subnet routers and tuned BigQuery dataset billing, reducing recurring spend without degrading capacity or signal.
+  \item \textbf{Incident Management:} Led incident reviews and blameless postmortems for platform-impacting events on a shared 24x7 rotation, converting findings into tracked reliability work and runbook automation.
   \item \textbf{Kubernetes:} Drove lifecycle upgrades of 15+ GKE platform components across 50+ non-production and production clusters — Gatekeeper (OPA admission webhooks), OpenTelemetry and Vault Secrets operators, cert-manager with approver-policy, and kube-rbac-proxy — keeping CRDs, operators, admission control, and RBAC current and continuously scanned (Trivy/Wiz).
-  \item \textbf{Kubernetes:} Managed the Envoy/xDS and Appvia Wayfinder control plane and delivered platform components via Flux (HelmReleases and Kustomizations) through a controlled, auditable ``conveyor-belt'' release pipeline, validating routing consistency through rollouts and pod recycles.
   \item \textbf{Networking:} Engineered Tailscale subnet-router and DERP relay networking across GCP VPCs (Cloud NAT, IAP tunnels, Workload Identity) and led destructive failover tests validating regional traffic shifting during incidents.
   \item \textbf{Observability:} Operated the observability stack (OpenTelemetry Collector/Operator, kube-state-metrics, Prometheus, Grafana) across 50+ non-production and production clusters — right-sized alerts at creation and remediated noisy alerts and stale metric descriptors on detection to keep signal high — and streamed audit logs to BigQuery for compliance and forensics.
   \item \textbf{Reliability:} Established the Reliability Engineering practice for the Tailscale platform through the REASSURE production-readiness journey — authored PRRs, defined SLIs/SLOs, and codified destructive-testing plans that surfaced resiliency gaps before customer impact.
   \item \textbf{Reliability:} Defined SLIs/SLOs and a strict production error-budget policy for subnet-router and DERP relay services sustaining 99.999\% availability — zero error-budget breaches since the SRE transition — aligning alerting and on-call response to measurable latency and availability targets.
   \item \textbf{Security:} Hardened the platform identity and secrets tier — Vault (OAuth/JWT/OIDC auth methods), Workload Identity, and cert-manager/Venafi issuance — and built a policy-scoped Vault namespace/path decommission tool gated behind a director-approved change workflow.
   \item \textbf{Strategy:} Shaped platform architecture around the ``80\% customer'' — shipping for the majority of the 7000+ developers the team directly supports first, then solving the remaining long-tail needs as capacity allows.
-  \item \textbf{Testing:} Built a reproducible, auditable validation and load-testing harness in Golang and GitHub Actions — reporting latency (p50/p95/p99), service-discovery time, error rate, deployment duration, and time-to-tailnet as deltas against a baseline — and executed destructive and load tests at 3x production scale (\textasciitilde{}2,000 services across four GCP regions) with node loss, region partition, and rolling pod recycling to validate xDS snapshot consistency and graceful-restart rollout strategies.
+  \item \textbf{Testing:} Built a reproducible, auditable validation and load-testing harness in Golang (concurrent worker pools, context cancellation, pprof profiling) and GitHub Actions — reporting latency (p50/p95/p99), service-discovery time, error rate, deployment duration, and time-to-tailnet as deltas against a baseline — and executed destructive and load tests at 3x production scale (\textasciitilde{}2,000 services across four GCP regions) with node loss, region partition, and rolling pod recycling to validate xDS snapshot consistency and graceful-restart rollout strategies.
 \end{itemize}
 \end{description}
 
@@ -136,10 +141,10 @@ right=0.5in]{geometry}              % specify right page margin
 \textit{Platform Engineering position focused on both software development of platform APIs and platform management. Position included a 24x7 on-call shift. Provided high-level customer support as the HashiCorp Vault platform subject matter expert. Supported Google Cloud infrastructure via Terraform Enterprise and Sentinel policy-as-code.} \\
 \vspace{-6.5pt}
 \begin{itemize}
-  \item \textbf{Application:} Implemented custom DERP servers for cloud-wide Tailscale tailnet communication. Maintained 99.999\% uptime.
-  \item \textbf{Application:} Developed GitHub Actions to automate building of operating system and container images.
-  \item \textbf{Deliverability:} Leveraged AI tools (Gemini, MCP server) to automate release notes, test selection, and documentation generation — improving release deliverability and maintaining consistently high deployment success rates.
-  \item \textbf{Development:} Built Terraform providers, a node exporter, and cluster smoke-test tooling in Golang to increase automation, observability, and platform reliability.
+  \item \textbf{APIs:} Built Golang platform APIs integrating GraphQL and Google Pub/Sub interfaces with Redis/Memcached caching — using asynchronous, idempotent event handling to decouple platform services and absorb bursty request load.
+  \item \textbf{Deliverability:} Evaluated and adopted AI-assisted development tooling (Gemini, purpose-built MCP servers) to automate release notes, test selection, and documentation generation — accelerating the software development lifecycle and maintaining consistently high deployment success rates.
+  \item \textbf{Development:} Built Terraform providers implementing HashiCorp's gRPC/protobuf plugin protocol, a Prometheus node exporter, and concurrent cluster smoke-test tooling in Golang — packaged as reusable internal libraries consumed by other platform teams to increase automation, observability, and reliability.
+  \item \textbf{Distributed Systems:} Implemented custom DERP relay servers in Golang providing NAT traversal and encrypted connection relaying for a cloud-wide Tailscale mesh, sustaining 99.999\% availability across GCP regions.
   \item \textbf{Documentation:} Designed and implemented a standardized documentation templating engine in Confluence, increasing team documentation output more than 10x over two quarters.
   \item \textbf{FinOps:} Led monitoring and metrics cost-optimization that reduced recurring observability spend while preserving signal quality.
   \item \textbf{Incident Management:} Established incident response playbooks, on-call rotation, and blameless postmortems.
@@ -159,11 +164,11 @@ right=0.5in]{geometry}              % specify right page margin
 \vspace{-6.5pt}
 \begin{itemize}
   \item \textbf{Application:} Developed a Terraform process to create Kubernetes clusters. Process improved Kubernetes customer cluster onboarding down from 2 business weeks to 15 minutes.
-  \item \textbf{Application:} Developed Terraform providers and APIs to bridge Rancher Kubernetes and Terraform using Golang.
+  \item \textbf{Application:} Developed Terraform providers and APIs to bridge Rancher Kubernetes and Terraform using Golang, implementing the gRPC/protobuf plugin interface against the Rancher control-plane API.
   \item \textbf{Application:} Developed GitHub Actions to automate building of operating system and container images.
   \item \textbf{Leadership:} Designed and ran team mentorship and people-development programs, and maintained an open-door 1:1 practice to improve shared knowledge and ramp.
   \item \textbf{Metrics:} Designed and implemented metrics and logging infrastructure for Kubernetes to egress metrics and logs from datacenter to Google Cloud.
-  \item \textbf{Reliability:} Developed node exporter providing additional metrics of Kubernetes node information in Prometheus format in Golang.
+  \item \textbf{Reliability:} Developed a concurrent node exporter in Golang exposing additional Kubernetes node metrics in Prometheus format.
   \item \textbf{Reliability:} Developed node smoke test application to provide real-time cluster status information in Golang.
   \item \textbf{Reliability:} Analyzed metrics usage and was able to reduce recurring cost by half.
   \item \textbf{Security:} Introduced IaC scanning into CI to detect misconfigurations earlier, reducing remediation time and preventing insecure deployments.
